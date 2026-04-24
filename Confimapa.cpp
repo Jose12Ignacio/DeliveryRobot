@@ -217,3 +217,67 @@ void imprimirGrafo(const vector<NodoGrafo>& grafo) {
         cout << endl;
     }
 }
+
+void exportarGrafoDOT(const vector<NodoGrafo>& grafo,
+                      const vector<vector<int>>& tablero,
+                      const string& nombreArchivo) {
+    ofstream archivo(nombreArchivo);
+
+    if (!archivo.is_open()) {
+        cout << "No se pudo crear el archivo DOT.\n";
+        return;
+    }
+
+    archivo << "graph Mapa {\n";
+    archivo << "    layout=neato;\n";
+    archivo << "    overlap=false;\n";
+    archivo << "    splines=true;\n";
+    archivo << "    node [shape=circle, style=filled, fillcolor=lightgray];\n";
+
+    int contadorEntregas = 1;
+
+    for (const NodoGrafo& nodo : grafo) {
+        int fila = nodo.posicion.fila;
+        int columna = nodo.posicion.columna;
+
+        string nodoID = to_string(fila) + "_" + to_string(columna);
+
+        if (tablero[fila][columna] == 2) {
+            archivo << "    \"" << nodoID << "\" "
+                    << "[label=\"Inicio\", shape=doublecircle, fillcolor=lightgreen];\n";
+        }
+        else if (tablero[fila][columna] == 3) {
+            archivo << "    \"" << nodoID << "\" "
+                    << "[label=\"Entrega " << contadorEntregas
+                    << "\", shape=box, fillcolor=lightblue];\n";
+
+            contadorEntregas++;
+        }
+        else {
+            archivo << "    \"" << nodoID << "\" "
+                    << "[label=\"(" << fila << "," << columna << ")\"];\n";
+        }
+    }
+
+    for (const NodoGrafo& nodo : grafo) {
+        string nodoActual = to_string(nodo.posicion.fila) + "_" +
+                            to_string(nodo.posicion.columna);
+
+        for (const Punto& vecino : nodo.vecinos) {
+            string nodoVecino = to_string(vecino.fila) + "_" +
+                                to_string(vecino.columna);
+
+            if (nodoActual < nodoVecino) {
+                archivo << "    \"" << nodoActual << "\" -- \""
+                        << nodoVecino << "\";\n";
+            }
+        }
+    }
+
+    archivo << "}\n";
+
+    archivo.close();
+
+    cout << "\nArchivo DOT generado correctamente: "
+         << nombreArchivo << endl;
+}

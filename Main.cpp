@@ -21,6 +21,8 @@ struct ResultadoDV {
     bool conectaAbajo;
     bool conectaIzquierda;
     bool conectaDerecha;
+    int cantidadCaminos;
+    int cantidadEstaciones;
 };
 
 // Funciones de Confimapa.cpp
@@ -38,6 +40,10 @@ void imprimirMapa(const vector<vector<int>>& tablero);
 void imprimirVecinos(const vector<Punto>& vecinos);
 
 void imprimirGrafo(const vector<NodoGrafo>& grafo);
+
+void exportarGrafoDOT(const vector<NodoGrafo>& grafo,
+                      const vector<vector<int>>& tablero,
+                      const string& nombreArchivo);
 
 // Funciones de Divide y venceras.cpp
 ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero,
@@ -66,7 +72,7 @@ int main() {
     cout << "\nPosicion inicial: (" << inicio.fila << ", "
          << inicio.columna << ")\n";
 
-    cout << "Cantidad de estaciones: " << estaciones.size() << "\n";
+    cout << "Cantidad de puntos de entrega: " << estaciones.size() << "\n";
 
     vector<Punto> vecinosInicio = obtenerVecinos(tablero, inicio);
 
@@ -76,6 +82,8 @@ int main() {
     vector<NodoGrafo> grafo = generarGrafo(tablero);
 
     imprimirGrafo(grafo);
+
+    exportarGrafoDOT(grafo, tablero, "grafo.dot");
 
     ResultadoDV resultado = resolverCuadrante(tablero, 0, filas - 1, 0, columnas - 1);
 
