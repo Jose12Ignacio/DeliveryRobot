@@ -9,6 +9,11 @@ struct Punto {
     int columna;
 };
 
+struct NodoGrafo {
+    Punto posicion;
+    vector<Punto> vecinos;
+};
+
 struct ResultadoDV {
     bool tieneInicio;
     bool tieneEstacion;
@@ -18,12 +23,29 @@ struct ResultadoDV {
     bool conectaDerecha;
 };
 
-void cargarMapaDesdeJSON(const string& ruta, vector<vector<int>>& tablero, Punto& inicio, vector<Punto>& estaciones);
+// Funciones de Confimapa.cpp
+void cargarMapaDesdeJSON(const string& ruta,
+                         vector<vector<int>>& tablero,
+                         Punto& inicio,
+                         vector<Punto>& estaciones);
+
 vector<Punto> obtenerVecinos(const vector<vector<int>>& tablero, Punto p);
+
+vector<NodoGrafo> generarGrafo(const vector<vector<int>>& tablero);
+
 void imprimirMapa(const vector<vector<int>>& tablero);
+
 void imprimirVecinos(const vector<Punto>& vecinos);
 
-ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero, int fi, int ff, int ci, int cf);
+void imprimirGrafo(const vector<NodoGrafo>& grafo);
+
+// Funciones de Divide y venceras.cpp
+ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero,
+                              int fi,
+                              int ff,
+                              int ci,
+                              int cf);
+
 void imprimirResultadoDV(const ResultadoDV& r);
 
 int main() {
@@ -31,6 +53,7 @@ int main() {
     const int columnas = 10;
 
     vector<vector<int>> tablero(filas, vector<int>(columnas, 0));
+
     Punto inicio = {-1, -1};
     vector<Punto> estaciones;
 
@@ -40,14 +63,22 @@ int main() {
 
     imprimirMapa(tablero);
 
-    cout << "\nPosicion inicial: (" << inicio.fila << ", " << inicio.columna << ")\n";
+    cout << "\nPosicion inicial: (" << inicio.fila << ", "
+         << inicio.columna << ")\n";
+
     cout << "Cantidad de estaciones: " << estaciones.size() << "\n";
 
     vector<Punto> vecinosInicio = obtenerVecinos(tablero, inicio);
+
     cout << "\nVecinos del punto inicial:\n";
     imprimirVecinos(vecinosInicio);
 
+    vector<NodoGrafo> grafo = generarGrafo(tablero);
+
+    imprimirGrafo(grafo);
+
     ResultadoDV resultado = resolverCuadrante(tablero, 0, filas - 1, 0, columnas - 1);
+
     imprimirResultadoDV(resultado);
 
     return 0;

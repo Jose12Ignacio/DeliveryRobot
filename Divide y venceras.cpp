@@ -12,7 +12,11 @@ struct ResultadoDV {
     bool conectaDerecha;
 };
 
-ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero, int fi, int ff, int ci, int cf) {
+ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero,
+                              int fi,
+                              int ff,
+                              int ci,
+                              int cf) {
     ResultadoDV r = {false, false, false, false, false, false};
 
     int alto = ff - fi + 1;
@@ -21,17 +25,34 @@ ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero, int fi, int ff
     if (alto <= 2 || ancho <= 2) {
         for (int i = fi; i <= ff; i++) {
             for (int j = ci; j <= cf; j++) {
-                if (tablero[i][j] == 2) r.tieneInicio = true;
-                if (tablero[i][j] == 3) r.tieneEstacion = true;
+                if (tablero[i][j] == 2) {
+                    r.tieneInicio = true;
+                }
+
+                if (tablero[i][j] == 3) {
+                    r.tieneEstacion = true;
+                }
 
                 if (tablero[i][j] != 0) {
-                    if (i == fi) r.conectaArriba = true;
-                    if (i == ff) r.conectaAbajo = true;
-                    if (j == ci) r.conectaIzquierda = true;
-                    if (j == cf) r.conectaDerecha = true;
+                    if (i == fi) {
+                        r.conectaArriba = true;
+                    }
+
+                    if (i == ff) {
+                        r.conectaAbajo = true;
+                    }
+
+                    if (j == ci) {
+                        r.conectaIzquierda = true;
+                    }
+
+                    if (j == cf) {
+                        r.conectaDerecha = true;
+                    }
                 }
             }
         }
+
         return r;
     }
 
@@ -43,8 +64,12 @@ ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero, int fi, int ff
     ResultadoDV q3 = resolverCuadrante(tablero, fm + 1, ff, ci, cm);
     ResultadoDV q4 = resolverCuadrante(tablero, fm + 1, ff, cm + 1, cf);
 
-    r.tieneInicio = q1.tieneInicio || q2.tieneInicio || q3.tieneInicio || q4.tieneInicio;
-    r.tieneEstacion = q1.tieneEstacion || q2.tieneEstacion || q3.tieneEstacion || q4.tieneEstacion;
+    r.tieneInicio = q1.tieneInicio || q2.tieneInicio ||
+                    q3.tieneInicio || q4.tieneInicio;
+
+    r.tieneEstacion = q1.tieneEstacion || q2.tieneEstacion ||
+                      q3.tieneEstacion || q4.tieneEstacion;
+
     r.conectaArriba = q1.conectaArriba || q2.conectaArriba;
     r.conectaAbajo = q3.conectaAbajo || q4.conectaAbajo;
     r.conectaIzquierda = q1.conectaIzquierda || q3.conectaIzquierda;
@@ -55,10 +80,22 @@ ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero, int fi, int ff
 
 void imprimirResultadoDV(const ResultadoDV& r) {
     cout << "\nRESULTADO DIVIDE Y VENCERAS:\n";
-    cout << "Tiene inicio: " << (r.tieneInicio ? "Si" : "No") << endl;
-    cout << "Tiene estacion: " << (r.tieneEstacion ? "Si" : "No") << endl;
-    cout << "Conexion arriba: " << (r.conectaArriba ? "Si" : "No") << endl;
-    cout << "Conexion abajo: " << (r.conectaAbajo ? "Si" : "No") << endl;
-    cout << "Conexion izquierda: " << (r.conectaIzquierda ? "Si" : "No") << endl;
-    cout << "Conexion derecha: " << (r.conectaDerecha ? "Si" : "No") << endl;
+
+    cout << "Tiene inicio: "
+         << (r.tieneInicio ? "Si" : "No") << endl;
+
+    cout << "Tiene estacion: "
+         << (r.tieneEstacion ? "Si" : "No") << endl;
+
+    cout << "Conexion arriba: "
+         << (r.conectaArriba ? "Si" : "No") << endl;
+
+    cout << "Conexion abajo: "
+         << (r.conectaAbajo ? "Si" : "No") << endl;
+
+    cout << "Conexion izquierda: "
+         << (r.conectaIzquierda ? "Si" : "No") << endl;
+
+    cout << "Conexion derecha: "
+         << (r.conectaDerecha ? "Si" : "No") << endl;
 }
