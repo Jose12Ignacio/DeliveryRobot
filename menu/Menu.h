@@ -6,20 +6,7 @@
 #include <GLFW/glfw3.h>
 #include <vector>
 #include <string>
-
-// ─────────────────────────────────────────────
-//  Structs base (temporal hasta tener Structs.h)
-// ─────────────────────────────────────────────
-struct Punto {
-    int fila;
-    int columna;
-};
-
-struct Entrega {
-    int         id;
-    float       peso;
-    Punto       destino;
-};
+#include "../Include/Estructura.h" 
 
 // ─────────────────────────────────────────────
 //  Estado global de la aplicación

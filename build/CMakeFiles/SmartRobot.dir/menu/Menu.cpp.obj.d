@@ -118,6 +118,7 @@ CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/cerrno \
  C:/mingw64/include/c++/13.3.0/bits/charconv.h \
  C:/mingw64/include/c++/13.3.0/bits/basic_string.tcc \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h \
  C:/mingw64/include/c++/13.3.0/iostream \
  C:/mingw64/include/c++/13.3.0/ostream C:/mingw64/include/c++/13.3.0/ios \
  C:/mingw64/include/c++/13.3.0/exception \

@@ -128,78 +128,6 @@ SmartRobot/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/build
 .PHONY : SmartRobot/fast
 
-Confimapa.obj: Confimapa.cpp.obj
-.PHONY : Confimapa.obj
-
-# target to build an object file
-Confimapa.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj
-.PHONY : Confimapa.cpp.obj
-
-Confimapa.i: Confimapa.cpp.i
-.PHONY : Confimapa.i
-
-# target to preprocess a source file
-Confimapa.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Confimapa.cpp.i
-.PHONY : Confimapa.cpp.i
-
-Confimapa.s: Confimapa.cpp.s
-.PHONY : Confimapa.s
-
-# target to generate assembly for a file
-Confimapa.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Confimapa.cpp.s
-.PHONY : Confimapa.cpp.s
-
-Divide_y_venceras.obj: Divide_y_venceras.cpp.obj
-.PHONY : Divide_y_venceras.obj
-
-# target to build an object file
-Divide_y_venceras.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj
-.PHONY : Divide_y_venceras.cpp.obj
-
-Divide_y_venceras.i: Divide_y_venceras.cpp.i
-.PHONY : Divide_y_venceras.i
-
-# target to preprocess a source file
-Divide_y_venceras.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.i
-.PHONY : Divide_y_venceras.cpp.i
-
-Divide_y_venceras.s: Divide_y_venceras.cpp.s
-.PHONY : Divide_y_venceras.s
-
-# target to generate assembly for a file
-Divide_y_venceras.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.s
-.PHONY : Divide_y_venceras.cpp.s
-
-Main.obj: Main.cpp.obj
-.PHONY : Main.obj
-
-# target to build an object file
-Main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Main.cpp.obj
-.PHONY : Main.cpp.obj
-
-Main.i: Main.cpp.i
-.PHONY : Main.i
-
-# target to preprocess a source file
-Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Main.cpp.i
-.PHONY : Main.cpp.i
-
-Main.s: Main.cpp.s
-.PHONY : Main.s
-
-# target to generate assembly for a file
-Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/Main.cpp.s
-.PHONY : Main.cpp.s
-
 imgui/backends/imgui_impl_glfw.obj: imgui/backends/imgui_impl_glfw.cpp.obj
 .PHONY : imgui/backends/imgui_impl_glfw.obj
 
@@ -368,6 +296,78 @@ menu/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/menu/Menu.cpp.s
 .PHONY : menu/Menu.cpp.s
 
+menu/MenuMain.obj: menu/MenuMain.cpp.obj
+.PHONY : menu/MenuMain.obj
+
+# target to build an object file
+menu/MenuMain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj
+.PHONY : menu/MenuMain.cpp.obj
+
+menu/MenuMain.i: menu/MenuMain.cpp.i
+.PHONY : menu/MenuMain.i
+
+# target to preprocess a source file
+menu/MenuMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.i
+.PHONY : menu/MenuMain.cpp.i
+
+menu/MenuMain.s: menu/MenuMain.cpp.s
+.PHONY : menu/MenuMain.s
+
+# target to generate assembly for a file
+menu/MenuMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.s
+.PHONY : menu/MenuMain.cpp.s
+
+pruebas/scr/Confimapa.obj: pruebas/scr/Confimapa.cpp.obj
+.PHONY : pruebas/scr/Confimapa.obj
+
+# target to build an object file
+pruebas/scr/Confimapa.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj
+.PHONY : pruebas/scr/Confimapa.cpp.obj
+
+pruebas/scr/Confimapa.i: pruebas/scr/Confimapa.cpp.i
+.PHONY : pruebas/scr/Confimapa.i
+
+# target to preprocess a source file
+pruebas/scr/Confimapa.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.i
+.PHONY : pruebas/scr/Confimapa.cpp.i
+
+pruebas/scr/Confimapa.s: pruebas/scr/Confimapa.cpp.s
+.PHONY : pruebas/scr/Confimapa.s
+
+# target to generate assembly for a file
+pruebas/scr/Confimapa.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.s
+.PHONY : pruebas/scr/Confimapa.cpp.s
+
+pruebas/scr/algortimos/Dividevenceras.obj: pruebas/scr/algortimos/Dividevenceras.cpp.obj
+.PHONY : pruebas/scr/algortimos/Dividevenceras.obj
+
+# target to build an object file
+pruebas/scr/algortimos/Dividevenceras.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj
+.PHONY : pruebas/scr/algortimos/Dividevenceras.cpp.obj
+
+pruebas/scr/algortimos/Dividevenceras.i: pruebas/scr/algortimos/Dividevenceras.cpp.i
+.PHONY : pruebas/scr/algortimos/Dividevenceras.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/Dividevenceras.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.i
+.PHONY : pruebas/scr/algortimos/Dividevenceras.cpp.i
+
+pruebas/scr/algortimos/Dividevenceras.s: pruebas/scr/algortimos/Dividevenceras.cpp.s
+.PHONY : pruebas/scr/algortimos/Dividevenceras.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/Dividevenceras.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.s
+.PHONY : pruebas/scr/algortimos/Dividevenceras.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -377,15 +377,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... SmartRobot
-	@echo ... Confimapa.obj
-	@echo ... Confimapa.i
-	@echo ... Confimapa.s
-	@echo ... Divide_y_venceras.obj
-	@echo ... Divide_y_venceras.i
-	@echo ... Divide_y_venceras.s
-	@echo ... Main.obj
-	@echo ... Main.i
-	@echo ... Main.s
 	@echo ... imgui/backends/imgui_impl_glfw.obj
 	@echo ... imgui/backends/imgui_impl_glfw.i
 	@echo ... imgui/backends/imgui_impl_glfw.s
@@ -407,6 +398,15 @@ help:
 	@echo ... menu/Menu.obj
 	@echo ... menu/Menu.i
 	@echo ... menu/Menu.s
+	@echo ... menu/MenuMain.obj
+	@echo ... menu/MenuMain.i
+	@echo ... menu/MenuMain.s
+	@echo ... pruebas/scr/Confimapa.obj
+	@echo ... pruebas/scr/Confimapa.i
+	@echo ... pruebas/scr/Confimapa.s
+	@echo ... pruebas/scr/algortimos/Dividevenceras.obj
+	@echo ... pruebas/scr/algortimos/Dividevenceras.i
+	@echo ... pruebas/scr/algortimos/Dividevenceras.s
 .PHONY : help
 
 

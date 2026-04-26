@@ -1,5 +1,5 @@
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj: \
- C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Confimapa.cpp \
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: \
+ C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Dividevenceras.cpp \
  C:/mingw64/include/c++/13.3.0/iostream \
  C:/mingw64/include/c++/13.3.0/bits/requires_hosted.h \
  C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -141,13 +141,9 @@ CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/bits/ostream.tcc \
  C:/mingw64/include/c++/13.3.0/istream \
  C:/mingw64/include/c++/13.3.0/bits/istream.tcc \
- C:/mingw64/include/c++/13.3.0/fstream \
- C:/mingw64/include/c++/13.3.0/bits/codecvt.h \
- C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/basic_file.h \
- C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/c++io.h \
- C:/mingw64/include/c++/13.3.0/bits/fstream.tcc \
  C:/mingw64/include/c++/13.3.0/vector \
  C:/mingw64/include/c++/13.3.0/bits/stl_uninitialized.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_vector.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_bvector.h \
- C:/mingw64/include/c++/13.3.0/bits/vector.tcc
+ C:/mingw64/include/c++/13.3.0/bits/vector.tcc \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h

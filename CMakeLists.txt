@@ -7,10 +7,11 @@ set(GLFW_INCLUDE "C:/glfw/include")
 set(GLFW_LIB     "C:/glfw/lib-mingw-w64/libglfw3.a")
 
 set(SOURCES
-    Main.cpp
-    Confimapa.cpp
-    "Divide y venceras.cpp"
+    menu/MenuMain.cpp
     menu/Menu.cpp
+    pruebas/scr/Confimapa.cpp
+    pruebas/scr/algortimos/Dividevenceras.cpp
+
     imgui/imgui.cpp
     imgui/imgui_draw.cpp
     imgui/imgui_tables.cpp
@@ -26,6 +27,9 @@ target_include_directories(SmartRobot PRIVATE
     imgui
     imgui/backends
     menu
+    Include
+    pruebas/scr
+    pruebas/scr/algortimos
 )
 
 target_link_libraries(SmartRobot PRIVATE
