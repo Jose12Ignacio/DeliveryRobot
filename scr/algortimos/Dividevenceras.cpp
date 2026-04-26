@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "Include/Estructura.h"
+
+#include "../../Include/DivideVenceras.h"
 
 using namespace std;
 
@@ -11,11 +12,13 @@ bool esTransitableDV(int valor) {
     return valor == 1 || valor == 2 || valor == 3;
 }
 
-ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero,
-                              int fi,
-                              int ff,
-                              int ci,
-                              int cf) {
+ResultadoDV resolverCuadrante(
+    const vector<vector<int>>& tablero,
+    int fi,
+    int ff,
+    int ci,
+    int cf
+) {
     ResultadoDV r = {
         false,  // tieneInicio
         false,  // tieneEstacion
@@ -100,7 +103,9 @@ ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero,
 }
 
 void imprimirResultadoDV(const ResultadoDV& r) {
-    cout << "\nRESULTADO DIVIDE Y VENCERAS:\n";
+    cout << "\n=====================================\n";
+    cout << "RESULTADO DIVIDE Y VENCERAS\n";
+    cout << "=====================================\n";
 
     cout << "Tiene inicio: "
          << (r.tieneInicio ? "Si" : "No") << endl;
@@ -130,7 +135,7 @@ void imprimirResultadoDV(const ResultadoDV& r) {
 
     if (r.tieneInicio && r.tieneEstacion && r.cantidadCaminos > 0) {
         cout << "El mapa contiene inicio, estaciones y caminos transitables.\n";
-        cout << "Divide y Venceras dividio el mapa en cuadrantes, resolvio cada subregion y combino los resultados.\n";
+        cout << "El algoritmo dividio el mapa en cuadrantes, resolvio cada subregion y combino los resultados.\n";
     }
     else {
         cout << "El mapa no contiene todos los elementos necesarios para una ruta completa.\n";
