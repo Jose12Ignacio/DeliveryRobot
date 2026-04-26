@@ -319,7 +319,7 @@ void mostrarConfiguracion(AppState& app) {
     ImGui::Separator();
     ImGui::Spacing();
 
-    static char rutaJson[512] = "tablero.json";
+    static char rutaJson[512] = "data/tablero.json";
     ImGui::Text("Ruta del archivo JSON:");
     ImGui::SetNextItemWidth(600);
     ImGui::InputText("##ruta", rutaJson, sizeof(rutaJson));

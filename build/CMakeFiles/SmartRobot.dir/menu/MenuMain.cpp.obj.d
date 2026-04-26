@@ -1,6 +1,6 @@
-CMakeFiles/SmartRobot.dir/Main.cpp.obj: \
- C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Main.cpp \
- C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu/Menu.h \
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj: \
+ C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\MenuMain.cpp \
+ C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\Menu.h \
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui.h \
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imconfig.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/float.h \
@@ -118,6 +118,7 @@ CMakeFiles/SmartRobot.dir/Main.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/cerrno \
  C:/mingw64/include/c++/13.3.0/bits/charconv.h \
  C:/mingw64/include/c++/13.3.0/bits/basic_string.tcc \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h \
  C:/mingw64/include/c++/13.3.0/iostream \
  C:/mingw64/include/c++/13.3.0/ostream C:/mingw64/include/c++/13.3.0/ios \
  C:/mingw64/include/c++/13.3.0/exception \

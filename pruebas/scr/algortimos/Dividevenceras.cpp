@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Include/Estructura.h"
+#include "Estructura.h"
 
 using namespace std;
 

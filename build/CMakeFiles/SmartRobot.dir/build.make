@@ -71,56 +71,26 @@ include CMakeFiles/SmartRobot.dir/flags.make
 CMakeFiles/SmartRobot.dir/codegen:
 .PHONY : CMakeFiles/SmartRobot.dir/codegen
 
-CMakeFiles/SmartRobot.dir/Main.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
-CMakeFiles/SmartRobot.dir/Main.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
-CMakeFiles/SmartRobot.dir/Main.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Main.cpp
-CMakeFiles/SmartRobot.dir/Main.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SmartRobot.dir/Main.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/Main.cpp.obj -MF CMakeFiles\SmartRobot.dir\Main.cpp.obj.d -o CMakeFiles\SmartRobot.dir\Main.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Main.cpp
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/menu/MenuMain.cpp
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj -MF CMakeFiles\SmartRobot.dir\menu\MenuMain.cpp.obj.d -o CMakeFiles\SmartRobot.dir\menu\MenuMain.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\MenuMain.cpp
 
-CMakeFiles/SmartRobot.dir/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/Main.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Main.cpp > CMakeFiles\SmartRobot.dir\Main.cpp.i
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\MenuMain.cpp > CMakeFiles\SmartRobot.dir\menu\MenuMain.cpp.i
 
-CMakeFiles/SmartRobot.dir/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/Main.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Main.cpp -o CMakeFiles\SmartRobot.dir\Main.cpp.s
-
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Confimapa.cpp
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj -MF CMakeFiles\SmartRobot.dir\Confimapa.cpp.obj.d -o CMakeFiles\SmartRobot.dir\Confimapa.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Confimapa.cpp
-
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/Confimapa.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Confimapa.cpp > CMakeFiles\SmartRobot.dir\Confimapa.cpp.i
-
-CMakeFiles/SmartRobot.dir/Confimapa.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/Confimapa.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Confimapa.cpp -o CMakeFiles\SmartRobot.dir\Confimapa.cpp.s
-
-CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
-CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
-CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Divide\ y\ venceras.cpp
-CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj -MF CMakeFiles\SmartRobot.dir\Divide_y_venceras.cpp.obj.d -o CMakeFiles\SmartRobot.dir\Divide_y_venceras.cpp.obj -c "C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Divide y venceras.cpp"
-
-CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Divide y venceras.cpp" > CMakeFiles\SmartRobot.dir\Divide_y_venceras.cpp.i
-
-CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\Divide y venceras.cpp" -o CMakeFiles\SmartRobot.dir\Divide_y_venceras.cpp.s
+CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\MenuMain.cpp -o CMakeFiles\SmartRobot.dir\menu\MenuMain.cpp.s
 
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/menu/Menu.cpp
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj -MF CMakeFiles\SmartRobot.dir\menu\Menu.cpp.obj.d -o CMakeFiles\SmartRobot.dir\menu\Menu.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\Menu.cpp
 
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.i: cmake_force
@@ -130,6 +100,36 @@ CMakeFiles/SmartRobot.dir/menu/Menu.cpp.i: cmake_force
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/menu/Menu.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\Menu.cpp -o CMakeFiles\SmartRobot.dir\menu\Menu.cpp.s
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/Confimapa.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\Confimapa.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\Confimapa.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\Confimapa.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\Confimapa.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\Confimapa.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\Confimapa.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\Confimapa.cpp.s
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Dividevenceras.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Dividevenceras.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Dividevenceras.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Dividevenceras.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.s
 
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
@@ -223,10 +223,10 @@ CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
 
 # Object files for target SmartRobot
 SmartRobot_OBJECTS = \
-"CMakeFiles/SmartRobot.dir/Main.cpp.obj" \
-"CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj" \
-"CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj" \
@@ -237,10 +237,10 @@ SmartRobot_OBJECTS = \
 # External object files for target SmartRobot
 SmartRobot_EXTERNAL_OBJECTS =
 
-SmartRobot.exe: CMakeFiles/SmartRobot.dir/Main.cpp.obj
-SmartRobot.exe: CMakeFiles/SmartRobot.dir/Confimapa.cpp.obj
-SmartRobot.exe: CMakeFiles/SmartRobot.dir/Divide_y_venceras.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj
