@@ -4,17 +4,9 @@
 #include <string>
 #include <cctype>
 
+#include "Estructura.h"
+
 using namespace std;
-
-struct Punto {
-    int fila;
-    int columna;
-};
-
-struct NodoGrafo {
-    Punto posicion;
-    vector<Punto> vecinos;
-};
 
 bool esTransitable(int valor) {
     return valor == 1 || valor == 2 || valor == 3;
