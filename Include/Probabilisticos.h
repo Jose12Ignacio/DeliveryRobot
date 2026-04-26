@@ -1,18 +1,10 @@
 #pragma once
 
 #include <vector>
-#include <string>
 #include "Estructura.h"
+#include "RutasUtil.h"
 
-struct ResultadoProbabilistico {
-    std::vector<Entrega> ruta;
-    int costoTotal;
-    bool rutaValida;
-    std::string tecnica;
-    int intentosUsados;
-};
-
-ResultadoProbabilistico algoritmoMonteCarlo(
+ResultadoRuta algoritmoMonteCarlo(
     const std::vector<std::vector<int>>& tablero,
     Punto inicio,
     std::vector<Entrega> entregas,
@@ -20,14 +12,10 @@ ResultadoProbabilistico algoritmoMonteCarlo(
     float capacidadMaxima
 );
 
-ResultadoProbabilistico algoritmoLasVegas(
+ResultadoRuta algoritmoLasVegas(
     const std::vector<std::vector<int>>& tablero,
     Punto inicio,
     std::vector<Entrega> entregas,
     int maxIntentos,
     float capacidadMaxima
-);
-
-void imprimirResultadoProbabilistico(
-    const ResultadoProbabilistico& resultado
 );
