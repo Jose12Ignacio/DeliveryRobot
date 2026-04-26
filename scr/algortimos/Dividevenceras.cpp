@@ -1,18 +1,8 @@
 #include <iostream>
 #include <vector>
+#include "Include/Estructura.h"
 
 using namespace std;
-
-struct ResultadoDV {
-    bool tieneInicio;
-    bool tieneEstacion;
-    bool conectaArriba;
-    bool conectaAbajo;
-    bool conectaIzquierda;
-    bool conectaDerecha;
-    int cantidadCaminos;
-    int cantidadEstaciones;
-};
 
 // 1 = Camino
 // 2 = Inicio

@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-#include "Estructura.h"
+#include "Include/Estructura.h"
 
 using namespace std;
 
