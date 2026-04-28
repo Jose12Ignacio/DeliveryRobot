@@ -1,0 +1,3 @@
+C:/Users/lboni/OneDrive/Documentos/robot entrega datos/DeliveryRobot/build/CMakeFiles/SmartRobot.dir
+C:/Users/lboni/OneDrive/Documentos/robot entrega datos/DeliveryRobot/build/CMakeFiles/edit_cache.dir
+C:/Users/lboni/OneDrive/Documentos/robot entrega datos/DeliveryRobot/build/CMakeFiles/rebuild_cache.dir
