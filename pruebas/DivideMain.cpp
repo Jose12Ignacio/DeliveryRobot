@@ -2,8 +2,7 @@
 #include <vector>
 #include <string>
 
-#include "../Include/Estructura.h"
-#include "../Include/Dividevenceras.h"
+#include "Include/Estructura.h"
 
 using namespace std;
 
@@ -13,12 +12,30 @@ void cargarMapaDesdeJSON(const string& ruta,
                          Punto& inicio,
                          vector<Punto>& estaciones);
 
+vector<Punto> obtenerVecinos(const vector<vector<int>>& tablero, Punto p);
+
+vector<NodoGrafo> generarGrafo(const vector<vector<int>>& tablero);
+
 void imprimirMapa(const vector<vector<int>>& tablero);
 
+void imprimirVecinos(const vector<Punto>& vecinos);
+
+void imprimirGrafo(const vector<NodoGrafo>& grafo);
+
+void exportarGrafoDOT(const vector<NodoGrafo>& grafo,
+                      const vector<vector<int>>& tablero,
+                      const string& nombreArchivo);
+
+// Funciones de Divide y venceras.cpp
+ResultadoDV resolverCuadrante(const vector<vector<int>>& tablero,
+                              int fi,
+                              int ff,
+                              int ci,
+                              int cf);
+
+void imprimirResultadoDV(const ResultadoDV& r);
+
 int main() {
-    cout << "=====================================\n";
-    cout << " PRUEBA DIVIDE Y VENCERAS\n";
-    cout << "=====================================\n\n";
 
     string rutaJson = "data/tablero.json";
 
@@ -33,24 +50,29 @@ int main() {
     cargarMapaDesdeJSON(rutaJson, tablero, inicio, estaciones);
 
     if (inicio.fila == -1 || inicio.columna == -1) {
-        cout << "Error: no se encontro el punto de inicio.\n";
-        cout << "Revise que exista el archivo: " << rutaJson << endl;
+        cout << "Error: no se encontro el punto de inicio en el mapa.\n";
         return 1;
     }
-
-    if (estaciones.empty()) {
-        cout << "Error: no se encontraron estaciones en el mapa.\n";
-        return 1;
-    }
-
-    cout << "Mapa cargado correctamente.\n";
-    cout << "Inicio: (" << inicio.fila << ", "
-         << inicio.columna << ")\n";
-
-    cout << "Cantidad de estaciones: "
-         << estaciones.size() << "\n";
 
     imprimirMapa(tablero);
+
+    cout << "\nPosicion inicial: ("
+         << inicio.fila << ", "
+         << inicio.columna << ")\n";
+
+    cout << "Cantidad de puntos de entrega: "
+         << estaciones.size() << "\n";
+
+    vector<Punto> vecinosInicio = obtenerVecinos(tablero, inicio);
+
+    cout << "\nVecinos del punto inicial:\n";
+    imprimirVecinos(vecinosInicio);
+
+    vector<NodoGrafo> grafo = generarGrafo(tablero);
+
+    imprimirGrafo(grafo);
+
+    exportarGrafoDOT(grafo, tablero, "grafo.dot");
 
     ResultadoDV resultado = resolverCuadrante(
         tablero,
@@ -61,8 +83,6 @@ int main() {
     );
 
     imprimirResultadoDV(resultado);
-
-    cout << "\nFin de la prueba Divide y Venceras.\n";
 
     return 0;
 }
