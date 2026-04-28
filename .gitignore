@@ -4,3 +4,4 @@ build/
 *.ilk
 *.pdb
 *.o
+*.a
