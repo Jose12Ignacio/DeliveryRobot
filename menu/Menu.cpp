@@ -193,7 +193,7 @@ void mostrarRegistro(AppState& app) {
     ImGui::Separator();
     ImGui::Spacing();
 
-    static float peso    = 0.f;
+    static int peso    = 0;
     static int   filaDst = 0;
     static int   colDst  = 0;
     static char  errorMsg[128] = "";
@@ -203,15 +203,46 @@ void mostrarRegistro(AppState& app) {
 
     ImGui::Text("Peso del paquete (max 20 kg):");
     ImGui::SetNextItemWidth(200);
-    ImGui::InputFloat("##peso", &peso, 0.1f, 1.f, "%.1f kg");
-
+    ImGui::InputInt("##peso", &peso);
+    if (peso < 1) peso = 1;
     ImGui::Spacing();
-    ImGui::Text("Coordenadas de la estacion destino:");
-    ImGui::SetNextItemWidth(100);
-    ImGui::InputInt("Fila##dst", &filaDst);
-    ImGui::SameLine();
-    ImGui::SetNextItemWidth(100);
-    ImGui::InputInt("Columna##dst", &colDst);
+   ImGui::Text("Estacion destino:");
+    ImGui::Spacing();
+
+    if (!app.mapaListo || app.estaciones.empty()) {
+        ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f},
+                            "Carga el mapa primero en Configuracion.");
+    } else {
+    static int estacionSeleccionada = 0;
+
+    // Asegurar que el índice sea válido
+    if (estacionSeleccionada >= (int)app.estaciones.size())
+        estacionSeleccionada = 0;
+
+    // Construir label del combo
+    std::string labelActual = "Estacion (" +
+        std::to_string(app.estaciones[estacionSeleccionada].fila) + ", " +
+        std::to_string(app.estaciones[estacionSeleccionada].columna) + ")";
+
+    ImGui::SetNextItemWidth(300);
+    if (ImGui::BeginCombo("##estacion", labelActual.c_str())) {
+        for (int i = 0; i < (int)app.estaciones.size(); i++) {
+            std::string opcion = "Estacion (" +
+                std::to_string(app.estaciones[i].fila) + ", " +
+                std::to_string(app.estaciones[i].columna) + ")";
+            bool seleccionado = (estacionSeleccionada == i);
+            if (ImGui::Selectable(opcion.c_str(), seleccionado))
+                estacionSeleccionada = i;
+            if (seleccionado)
+                ImGui::SetItemDefaultFocus();
+        }
+        ImGui::EndCombo();
+    }
+
+        // Actualizar destino con la estación seleccionada
+        filaDst = app.estaciones[estacionSeleccionada].fila;
+        colDst  = app.estaciones[estacionSeleccionada].columna;
+    }
 
     ImGui::Spacing();
     ImGui::Spacing();
@@ -219,9 +250,9 @@ void mostrarRegistro(AppState& app) {
     if (ImGui::Button("Agregar paquete", {200, 45})) {
         errorMsg[0] = '\0';
 
-        if (peso <= 0.f || peso > 20.f) {
+        if (peso < 1 || peso > 20) {
             snprintf(errorMsg, sizeof(errorMsg),
-                     "Error: el peso debe ser entre 0.1 y 20 kg.");
+                     "Error: el peso debe ser entre 1 y 20 kg.");
         } else if (!app.mapaListo) {
             snprintf(errorMsg, sizeof(errorMsg),
                      "Error: carga el mapa primero en Configuracion.");
@@ -243,7 +274,7 @@ void mostrarRegistro(AppState& app) {
                 nueva.peso    = peso;
                 nueva.destino = {filaDst, colDst};
                 app.entregas.push_back(nueva);
-                peso    = 0.f;
+                peso    = 0;
                 filaDst = 0;
                 colDst  = 0;
             }
@@ -283,7 +314,7 @@ void mostrarRegistro(AppState& app) {
             const auto& e = app.entregas[i];
             ImGui::TableNextRow();
             ImGui::TableSetColumnIndex(0); ImGui::Text("%d", e.id);
-            ImGui::TableSetColumnIndex(1); ImGui::Text("%.1f kg", e.peso);
+            ImGui::TableSetColumnIndex(1); ImGui::Text("%d kg", e.peso);
             ImGui::TableSetColumnIndex(2);
             ImGui::Text("(%d, %d)", e.destino.fila, e.destino.columna);
             ImGui::TableSetColumnIndex(3);
