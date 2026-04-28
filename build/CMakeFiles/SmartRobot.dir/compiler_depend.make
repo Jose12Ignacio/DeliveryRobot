@@ -1780,6 +1780,7 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj: C:/Users/fbarr/OneDrive
   C:/mingw64/x86_64-w64-mingw32/include/wctype.h
 
 CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Dividevenceras.cpp \
+  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/DivideVenceras.h \
   C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h \
   C:/mingw64/include/c++/13.3.0/backward/binders.h \
   C:/mingw64/include/c++/13.3.0/bit \
@@ -2807,3 +2808,5 @@ C:/mingw64/include/c++/13.3.0/bits/codecvt.h:
 C:/mingw64/include/c++/13.3.0/fstream:
 
 C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/c++io.h:
+
+C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/DivideVenceras.h:

@@ -146,4 +146,5 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/bits/stl_vector.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_bvector.h \
  C:/mingw64/include/c++/13.3.0/bits/vector.tcc \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/DivideVenceras.h \
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h
