@@ -116,11 +116,26 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\Confimapa.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\Confimapa.cpp.s
 
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Backtracking.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Backtracking.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Backtracking.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Backtracking.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Backtracking.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Backtracking.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Backtracking.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Backtracking.cpp.s
+
 CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
 CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Dividevenceras.cpp
 CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Dividevenceras.cpp
 
 CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.i: cmake_force
@@ -131,11 +146,86 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Dividevenceras.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Dividevenceras.cpp.s
 
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Genetico.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Genetico.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Genetico.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Genetico.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Genetico.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Genetico.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Genetico.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Genetico.cpp.s
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Greedy.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Greedy.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Greedy.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Greedy.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Greedy.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Greedy.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Greedy.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Greedy.cpp.s
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Probabilistico.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Probabilistico.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Probabilistico.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Probabilistico.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Probabilistico.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Probabilistico.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\Probabilistico.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\Probabilistico.cpp.s
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/ProgramacionDinamica.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\ProgramacionDinamica.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\ProgramacionDinamica.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\ProgramacionDinamica.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\ProgramacionDinamica.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\ProgramacionDinamica.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\ProgramacionDinamica.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\ProgramacionDinamica.cpp.s
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/RutasUtil.cpp
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj -MF CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\RutasUtil.cpp.obj.d -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\RutasUtil.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\RutasUtil.cpp
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\RutasUtil.cpp > CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\RutasUtil.cpp.i
+
+CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\pruebas\scr\algortimos\RutasUtil.cpp -o CMakeFiles\SmartRobot.dir\pruebas\scr\algortimos\RutasUtil.cpp.s
+
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj: CMakeFiles/SmartRobot.dir/flags.make
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui.cpp
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj -MF CMakeFiles\SmartRobot.dir\imgui\imgui.cpp.obj.d -o CMakeFiles\SmartRobot.dir\imgui\imgui.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\imgui\imgui.cpp
 
 CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.i: cmake_force
@@ -150,7 +240,7 @@ CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj: CMakeFiles/SmartRobot.dir/fl
 CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui_draw.cpp
 CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj -MF CMakeFiles\SmartRobot.dir\imgui\imgui_draw.cpp.obj.d -o CMakeFiles\SmartRobot.dir\imgui\imgui_draw.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\imgui\imgui_draw.cpp
 
 CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.i: cmake_force
@@ -165,7 +255,7 @@ CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj: CMakeFiles/SmartRobot.dir/
 CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui_tables.cpp
 CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj -MF CMakeFiles\SmartRobot.dir\imgui\imgui_tables.cpp.obj.d -o CMakeFiles\SmartRobot.dir\imgui\imgui_tables.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\imgui\imgui_tables.cpp
 
 CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.i: cmake_force
@@ -180,7 +270,7 @@ CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj: CMakeFiles/SmartRobot.dir
 CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui_widgets.cpp
 CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.obj -MF CMakeFiles\SmartRobot.dir\imgui\imgui_widgets.cpp.obj.d -o CMakeFiles\SmartRobot.dir\imgui\imgui_widgets.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\imgui\imgui_widgets.cpp
 
 CMakeFiles/SmartRobot.dir/imgui/imgui_widgets.cpp.i: cmake_force
@@ -195,7 +285,7 @@ CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/Sma
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.obj -MF CMakeFiles\SmartRobot.dir\imgui\backends\imgui_impl_glfw.cpp.obj.d -o CMakeFiles\SmartRobot.dir\imgui\backends\imgui_impl_glfw.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\imgui\backends\imgui_impl_glfw.cpp
 
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -210,7 +300,7 @@ CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/SmartRobot.dir/includes_CXX.rsp
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/SmartRobot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.obj -MF CMakeFiles\SmartRobot.dir\imgui\backends\imgui_impl_opengl3.cpp.obj.d -o CMakeFiles\SmartRobot.dir\imgui\backends\imgui_impl_opengl3.cpp.obj -c C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\imgui\backends\imgui_impl_opengl3.cpp
 
 CMakeFiles/SmartRobot.dir/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -226,7 +316,13 @@ SmartRobot_OBJECTS = \
 "CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj" \
+"CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj" \
 "CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj" \
@@ -240,7 +336,13 @@ SmartRobot_EXTERNAL_OBJECTS =
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj
+SmartRobot.exe: CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/imgui/imgui.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/imgui/imgui_draw.cpp.obj
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/imgui/imgui_tables.cpp.obj
@@ -252,7 +354,7 @@ SmartRobot.exe: C:/glfw/lib-mingw-w64/libglfw3.a
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/linkLibs.rsp
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/objects1.rsp
 SmartRobot.exe: CMakeFiles/SmartRobot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable SmartRobot.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable SmartRobot.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SmartRobot.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -344,6 +344,30 @@ pruebas/scr/Confimapa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.s
 .PHONY : pruebas/scr/Confimapa.cpp.s
 
+pruebas/scr/algortimos/Backtracking.obj: pruebas/scr/algortimos/Backtracking.cpp.obj
+.PHONY : pruebas/scr/algortimos/Backtracking.obj
+
+# target to build an object file
+pruebas/scr/algortimos/Backtracking.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj
+.PHONY : pruebas/scr/algortimos/Backtracking.cpp.obj
+
+pruebas/scr/algortimos/Backtracking.i: pruebas/scr/algortimos/Backtracking.cpp.i
+.PHONY : pruebas/scr/algortimos/Backtracking.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/Backtracking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.i
+.PHONY : pruebas/scr/algortimos/Backtracking.cpp.i
+
+pruebas/scr/algortimos/Backtracking.s: pruebas/scr/algortimos/Backtracking.cpp.s
+.PHONY : pruebas/scr/algortimos/Backtracking.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/Backtracking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.s
+.PHONY : pruebas/scr/algortimos/Backtracking.cpp.s
+
 pruebas/scr/algortimos/Dividevenceras.obj: pruebas/scr/algortimos/Dividevenceras.cpp.obj
 .PHONY : pruebas/scr/algortimos/Dividevenceras.obj
 
@@ -367,6 +391,126 @@ pruebas/scr/algortimos/Dividevenceras.s: pruebas/scr/algortimos/Dividevenceras.c
 pruebas/scr/algortimos/Dividevenceras.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.s
 .PHONY : pruebas/scr/algortimos/Dividevenceras.cpp.s
+
+pruebas/scr/algortimos/Genetico.obj: pruebas/scr/algortimos/Genetico.cpp.obj
+.PHONY : pruebas/scr/algortimos/Genetico.obj
+
+# target to build an object file
+pruebas/scr/algortimos/Genetico.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj
+.PHONY : pruebas/scr/algortimos/Genetico.cpp.obj
+
+pruebas/scr/algortimos/Genetico.i: pruebas/scr/algortimos/Genetico.cpp.i
+.PHONY : pruebas/scr/algortimos/Genetico.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/Genetico.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.i
+.PHONY : pruebas/scr/algortimos/Genetico.cpp.i
+
+pruebas/scr/algortimos/Genetico.s: pruebas/scr/algortimos/Genetico.cpp.s
+.PHONY : pruebas/scr/algortimos/Genetico.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/Genetico.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.s
+.PHONY : pruebas/scr/algortimos/Genetico.cpp.s
+
+pruebas/scr/algortimos/Greedy.obj: pruebas/scr/algortimos/Greedy.cpp.obj
+.PHONY : pruebas/scr/algortimos/Greedy.obj
+
+# target to build an object file
+pruebas/scr/algortimos/Greedy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj
+.PHONY : pruebas/scr/algortimos/Greedy.cpp.obj
+
+pruebas/scr/algortimos/Greedy.i: pruebas/scr/algortimos/Greedy.cpp.i
+.PHONY : pruebas/scr/algortimos/Greedy.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/Greedy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.i
+.PHONY : pruebas/scr/algortimos/Greedy.cpp.i
+
+pruebas/scr/algortimos/Greedy.s: pruebas/scr/algortimos/Greedy.cpp.s
+.PHONY : pruebas/scr/algortimos/Greedy.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/Greedy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.s
+.PHONY : pruebas/scr/algortimos/Greedy.cpp.s
+
+pruebas/scr/algortimos/Probabilistico.obj: pruebas/scr/algortimos/Probabilistico.cpp.obj
+.PHONY : pruebas/scr/algortimos/Probabilistico.obj
+
+# target to build an object file
+pruebas/scr/algortimos/Probabilistico.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj
+.PHONY : pruebas/scr/algortimos/Probabilistico.cpp.obj
+
+pruebas/scr/algortimos/Probabilistico.i: pruebas/scr/algortimos/Probabilistico.cpp.i
+.PHONY : pruebas/scr/algortimos/Probabilistico.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/Probabilistico.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.i
+.PHONY : pruebas/scr/algortimos/Probabilistico.cpp.i
+
+pruebas/scr/algortimos/Probabilistico.s: pruebas/scr/algortimos/Probabilistico.cpp.s
+.PHONY : pruebas/scr/algortimos/Probabilistico.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/Probabilistico.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.s
+.PHONY : pruebas/scr/algortimos/Probabilistico.cpp.s
+
+pruebas/scr/algortimos/ProgramacionDinamica.obj: pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj
+.PHONY : pruebas/scr/algortimos/ProgramacionDinamica.obj
+
+# target to build an object file
+pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj
+.PHONY : pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj
+
+pruebas/scr/algortimos/ProgramacionDinamica.i: pruebas/scr/algortimos/ProgramacionDinamica.cpp.i
+.PHONY : pruebas/scr/algortimos/ProgramacionDinamica.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/ProgramacionDinamica.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.i
+.PHONY : pruebas/scr/algortimos/ProgramacionDinamica.cpp.i
+
+pruebas/scr/algortimos/ProgramacionDinamica.s: pruebas/scr/algortimos/ProgramacionDinamica.cpp.s
+.PHONY : pruebas/scr/algortimos/ProgramacionDinamica.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/ProgramacionDinamica.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.s
+.PHONY : pruebas/scr/algortimos/ProgramacionDinamica.cpp.s
+
+pruebas/scr/algortimos/RutasUtil.obj: pruebas/scr/algortimos/RutasUtil.cpp.obj
+.PHONY : pruebas/scr/algortimos/RutasUtil.obj
+
+# target to build an object file
+pruebas/scr/algortimos/RutasUtil.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj
+.PHONY : pruebas/scr/algortimos/RutasUtil.cpp.obj
+
+pruebas/scr/algortimos/RutasUtil.i: pruebas/scr/algortimos/RutasUtil.cpp.i
+.PHONY : pruebas/scr/algortimos/RutasUtil.i
+
+# target to preprocess a source file
+pruebas/scr/algortimos/RutasUtil.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.i
+.PHONY : pruebas/scr/algortimos/RutasUtil.cpp.i
+
+pruebas/scr/algortimos/RutasUtil.s: pruebas/scr/algortimos/RutasUtil.cpp.s
+.PHONY : pruebas/scr/algortimos/RutasUtil.s
+
+# target to generate assembly for a file
+pruebas/scr/algortimos/RutasUtil.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.s
+.PHONY : pruebas/scr/algortimos/RutasUtil.cpp.s
 
 # Help Target
 help:
@@ -404,9 +548,27 @@ help:
 	@echo ... pruebas/scr/Confimapa.obj
 	@echo ... pruebas/scr/Confimapa.i
 	@echo ... pruebas/scr/Confimapa.s
+	@echo ... pruebas/scr/algortimos/Backtracking.obj
+	@echo ... pruebas/scr/algortimos/Backtracking.i
+	@echo ... pruebas/scr/algortimos/Backtracking.s
 	@echo ... pruebas/scr/algortimos/Dividevenceras.obj
 	@echo ... pruebas/scr/algortimos/Dividevenceras.i
 	@echo ... pruebas/scr/algortimos/Dividevenceras.s
+	@echo ... pruebas/scr/algortimos/Genetico.obj
+	@echo ... pruebas/scr/algortimos/Genetico.i
+	@echo ... pruebas/scr/algortimos/Genetico.s
+	@echo ... pruebas/scr/algortimos/Greedy.obj
+	@echo ... pruebas/scr/algortimos/Greedy.i
+	@echo ... pruebas/scr/algortimos/Greedy.s
+	@echo ... pruebas/scr/algortimos/Probabilistico.obj
+	@echo ... pruebas/scr/algortimos/Probabilistico.i
+	@echo ... pruebas/scr/algortimos/Probabilistico.s
+	@echo ... pruebas/scr/algortimos/ProgramacionDinamica.obj
+	@echo ... pruebas/scr/algortimos/ProgramacionDinamica.i
+	@echo ... pruebas/scr/algortimos/ProgramacionDinamica.s
+	@echo ... pruebas/scr/algortimos/RutasUtil.obj
+	@echo ... pruebas/scr/algortimos/RutasUtil.i
+	@echo ... pruebas/scr/algortimos/RutasUtil.s
 .PHONY : help
 
 

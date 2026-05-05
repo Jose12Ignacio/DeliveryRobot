@@ -10,8 +10,13 @@ set(SOURCES
     menu/MenuMain.cpp
     menu/Menu.cpp
     pruebas/scr/Confimapa.cpp
+    pruebas/scr/algortimos/Backtracking.cpp
     pruebas/scr/algortimos/Dividevenceras.cpp
-
+    pruebas/scr/algortimos/Genetico.cpp
+    pruebas/scr/algortimos/Greedy.cpp
+    pruebas/scr/algortimos/Probabilistico.cpp
+    pruebas/scr/algortimos/ProgramacionDinamica.cpp
+    pruebas/scr/algortimos/RutasUtil.cpp
     imgui/imgui.cpp
     imgui/imgui_draw.cpp
     imgui/imgui_tables.cpp

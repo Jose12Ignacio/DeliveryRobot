@@ -17,7 +17,13 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/menu/Menu.cpp" "CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj.d"
   "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/menu/MenuMain.cpp" "CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/menu/MenuMain.cpp.obj.d"
   "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/Confimapa.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/Confimapa.cpp.obj.d"
+  "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Backtracking.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Backtracking.cpp.obj.d"
   "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Dividevenceras.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Dividevenceras.cpp.obj.d"
+  "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Genetico.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Genetico.cpp.obj.d"
+  "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Greedy.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Greedy.cpp.obj.d"
+  "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/Probabilistico.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/Probabilistico.cpp.obj.d"
+  "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/ProgramacionDinamica.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/ProgramacionDinamica.cpp.obj.d"
+  "C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/RutasUtil.cpp" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj" "gcc" "CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,50 +1,11 @@
 CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: \
  C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\Menu.cpp \
- C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\menu\Menu.h \
- C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui.h \
- C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imconfig.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/float.h \
- C:/mingw64/x86_64-w64-mingw32/include/float.h \
- C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
- C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
- C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
- C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/stddef.h \
- C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
- C:/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
- C:/mingw64/x86_64-w64-mingw32/include/assert.h \
- C:/mingw64/include/c++/13.3.0/stdlib.h \
- C:/mingw64/include/c++/13.3.0/cstdlib \
+ C:/mingw64/include/c++/13.3.0/algorithm \
+ C:/mingw64/include/c++/13.3.0/bits/stl_algobase.h \
  C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/os_defines.h \
  C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/mingw64/include/c++/13.3.0/pstl/pstl_config.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
- C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/limits.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/syslimits.h \
- C:/mingw64/x86_64-w64-mingw32/include/limits.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
- C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/mm_malloc.h \
- C:/mingw64/x86_64-w64-mingw32/include/errno.h \
- C:/mingw64/include/c++/13.3.0/bits/std_abs.h \
- C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/backends/imgui_impl_glfw.h \
- C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/backends/imgui_impl_opengl3.h \
- C:/glfw/include/GLFW/glfw3.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/stdint.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
- C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
- C:/mingw64/include/c++/13.3.0/vector \
- C:/mingw64/include/c++/13.3.0/bits/requires_hosted.h \
- C:/mingw64/include/c++/13.3.0/bits/stl_algobase.h \
  C:/mingw64/include/c++/13.3.0/bits/functexcept.h \
  C:/mingw64/include/c++/13.3.0/bits/exception_defines.h \
  C:/mingw64/include/c++/13.3.0/bits/cpp_type_traits.h \
@@ -63,18 +24,65 @@ CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/debug/debug.h \
  C:/mingw64/include/c++/13.3.0/bits/predefined_ops.h \
  C:/mingw64/include/c++/13.3.0/bit \
+ C:/mingw64/include/c++/13.3.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/13.3.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/13.3.0/initializer_list \
+ C:/mingw64/include/c++/13.3.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/13.3.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/13.3.0/bits/stl_tempbuf.h \
+ C:/mingw64/include/c++/13.3.0/new \
+ C:/mingw64/include/c++/13.3.0/bits/exception.h \
+ C:/mingw64/include/c++/13.3.0/bits/stl_construct.h \
+ C:/mingw64/include/c++/13.3.0/cstdlib \
+ C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/limits.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/syslimits.h \
+ C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/mingw64/include/c++/13.3.0/stdlib.h \
+ C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/mm_malloc.h \
+ C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+ C:/mingw64/include/c++/13.3.0/bits/std_abs.h \
+ C:/mingw64/include/c++/13.3.0/pstl/glue_algorithm_defs.h \
+ C:/mingw64/include/c++/13.3.0/pstl/execution_defs.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Menu.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imgui.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/imconfig.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/float.h \
+ C:/mingw64/x86_64-w64-mingw32/include/float.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/stddef.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ C:/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/backends/imgui_impl_glfw.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/imgui/backends/imgui_impl_opengl3.h \
+ C:/glfw/include/GLFW/glfw3.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.3.0/include/stdint.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
+ C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
+ C:/mingw64/include/c++/13.3.0/vector \
+ C:/mingw64/include/c++/13.3.0/bits/requires_hosted.h \
  C:/mingw64/include/c++/13.3.0/bits/allocator.h \
  C:/mingw64/include/c++/13.3.0/x86_64-w64-mingw32/bits/c++allocator.h \
  C:/mingw64/include/c++/13.3.0/bits/new_allocator.h \
- C:/mingw64/include/c++/13.3.0/new \
- C:/mingw64/include/c++/13.3.0/bits/exception.h \
  C:/mingw64/include/c++/13.3.0/bits/memoryfwd.h \
- C:/mingw64/include/c++/13.3.0/bits/stl_construct.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_uninitialized.h \
  C:/mingw64/include/c++/13.3.0/ext/alloc_traits.h \
  C:/mingw64/include/c++/13.3.0/bits/alloc_traits.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_vector.h \
- C:/mingw64/include/c++/13.3.0/initializer_list \
  C:/mingw64/include/c++/13.3.0/bits/stl_bvector.h \
  C:/mingw64/include/c++/13.3.0/bits/functional_hash.h \
  C:/mingw64/include/c++/13.3.0/bits/hash_bytes.h \
@@ -119,6 +127,12 @@ CMakeFiles/SmartRobot.dir/menu/Menu.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/bits/charconv.h \
  C:/mingw64/include/c++/13.3.0/bits/basic_string.tcc \
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/RutasUtil.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Backtracking.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Genetico.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Greedy.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Probabilisticos.h \
+ C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/ProgramacionDinamica.h \
  C:/mingw64/include/c++/13.3.0/iostream \
  C:/mingw64/include/c++/13.3.0/ostream C:/mingw64/include/c++/13.3.0/ios \
  C:/mingw64/include/c++/13.3.0/exception \

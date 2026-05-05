@@ -84,12 +84,12 @@ clean: CMakeFiles/SmartRobot.dir/clean
 CMakeFiles/SmartRobot.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target SmartRobot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target SmartRobot"
 .PHONY : CMakeFiles/SmartRobot.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SmartRobot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/SmartRobot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles 0
 .PHONY : CMakeFiles/SmartRobot.dir/rule
@@ -101,7 +101,7 @@ SmartRobot: CMakeFiles/SmartRobot.dir/rule
 # codegen rule for target.
 CMakeFiles/SmartRobot.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SmartRobot.dir\build.make CMakeFiles/SmartRobot.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target SmartRobot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\fbarr\OneDrive\Documentos\GitHub\DeliveryRobot\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Finished codegen for target SmartRobot"
 .PHONY : CMakeFiles/SmartRobot.dir/codegen
 
 # clean rule for target.
