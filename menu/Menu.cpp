@@ -546,6 +546,13 @@ void mostrarPreview(AppState& app) {
         }
     }
     ImGui::Spacing();
+    if (app.rutaCalculadaLista) {
+        int costoTotal = 0;
+        for (const auto& v : app.viajes)
+            costoTotal += v.costoTotal;
+        ImGui::Text("Costo viaje actual: %d  |  Costo total todos los viajes: %d",
+            app.rutaCalculada.costoTotal, costoTotal);
+    }
 
     // ── Grid del mapa ─────────────────────────────────────────
     ImDrawList* draw = ImGui::GetWindowDrawList();
@@ -599,16 +606,31 @@ void mostrarPreview(AppState& app) {
     ImGui::Spacing();
     ImGui::Separator();
     ImGui::Spacing();
-    ImGui::TextColored({0.9f, 0.8f, 0.1f, 1.f}, "■"); ImGui::SameLine();
-    ImGui::Text("Inicio");                              ImGui::SameLine();
-    ImGui::Dummy({10, 0});                              ImGui::SameLine();
-    ImGui::TextColored({0.2f, 0.4f, 0.8f, 1.f}, "■"); ImGui::SameLine();
-    ImGui::Text("Camino");                              ImGui::SameLine();
-    ImGui::Dummy({10, 0});                              ImGui::SameLine();
-    ImGui::TextColored({0.8f, 0.2f, 0.2f, 1.f}, "■"); ImGui::SameLine();
-    ImGui::Text("Estacion");                            ImGui::SameLine();
-    ImGui::Dummy({10, 0});                              ImGui::SameLine();
-    ImGui::TextColored({0.2f, 0.9f, 0.4f, 1.f}, "■"); ImGui::SameLine();
+
+
+    // Leyenda con cuadros de color
+    ImDrawList* drawL = ImGui::GetWindowDrawList();
+    ImVec2 pos = ImGui::GetCursorScreenPos();
+    float sz = 16.f;
+    float gap = 8.f;
+
+    drawL->AddRectFilled(pos, {pos.x+sz, pos.y+sz}, IM_COL32(230,200,30,255), 2.f);
+    ImGui::Dummy({sz, sz}); ImGui::SameLine(0, gap);
+    ImGui::Text("Inicio"); ImGui::SameLine(0, 20);
+
+    pos = ImGui::GetCursorScreenPos();
+    drawL->AddRectFilled(pos, {pos.x+sz, pos.y+sz}, IM_COL32(50,100,200,255), 2.f);
+    ImGui::Dummy({sz, sz}); ImGui::SameLine(0, gap);
+    ImGui::Text("Camino"); ImGui::SameLine(0, 20);
+
+    pos = ImGui::GetCursorScreenPos();
+    drawL->AddRectFilled(pos, {pos.x+sz, pos.y+sz}, IM_COL32(200,50,50,255), 2.f);
+    ImGui::Dummy({sz, sz}); ImGui::SameLine(0, gap);
+    ImGui::Text("Estacion"); ImGui::SameLine(0, 20);
+
+    pos = ImGui::GetCursorScreenPos();
+    drawL->AddRectFilled(pos, {pos.x+sz, pos.y+sz}, IM_COL32(50,220,100,255), 2.f);
+    ImGui::Dummy({sz, sz}); ImGui::SameLine(0, gap);
     ImGui::Text("En ruta");
 
     ImGui::Spacing();
