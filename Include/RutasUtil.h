@@ -12,6 +12,12 @@ struct ResultadoRuta {
     std::string tecnica;
 };
 
+std::vector<Punto> obtenerCaminoBFS(
+    const std::vector<std::vector<int>>& tablero,
+    Punto origen,
+    Punto destino
+);
+
 bool esTransitableRuta(int valor);
 
 float calcularPesoTotalRuta(const std::vector<Entrega>& ruta);

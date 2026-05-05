@@ -5,15 +5,13 @@
 #include <iostream>
 #include <cstdio>
 
-// Forward declaration de ConfMapa.cpp
+//Forward declaration de ConfMapa.cpp
 void cargarMapaDesdeJSON(const std::string& ruta,
                          std::vector<std::vector<int>>& tablero,
                          Punto& inicio,
                          std::vector<Punto>& estaciones);
 
-// ════════════════════════════════════════════════════════════════
-//  INICIALIZACIÓN
-// ════════════════════════════════════════════════════════════════
+//Incialización de la ventana
 GLFWwindow* inicializarVentana() {
     if (!glfwInit()) return nullptr;
 
@@ -49,9 +47,7 @@ void inicializarImGui(GLFWwindow* window) {
     ImGui_ImplOpenGL3_Init("#version 330");
 }
 
-// ════════════════════════════════════════════════════════════════
-//  LOOP PRINCIPAL
-// ════════════════════════════════════════════════════════════════
+//LOOP PRINCIPAL
 void loopPrincipal(GLFWwindow* window, AppState& app) {
     ImGuiIO& io = ImGui::GetIO();
 
@@ -62,7 +58,7 @@ void loopPrincipal(GLFWwindow* window, AppState& app) {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // Fondo completo
+        //Fondo completo
         ImGui::SetNextWindowPos({0, 0}, ImGuiCond_Always);
         ImGui::SetNextWindowSize(io.DisplaySize, ImGuiCond_Always);
         ImGui::PushStyleColor(ImGuiCol_WindowBg, {0.07f, 0.07f, 0.11f, 1.f});
@@ -74,10 +70,10 @@ void loopPrincipal(GLFWwindow* window, AppState& app) {
         ImGui::PopStyleColor();
         ImGui::End();
 
-        // Panel lateral siempre visible
+        //Panel lateral siempre visible
         mostrarMenuPrincipal(app);
 
-        // Pantalla activa
+        //Pantalla activa
         switch (app.pantalla) {
             case 1: mostrarRegistro(app);      break;
             case 2: mostrarConfiguracion(app); break;
@@ -85,7 +81,7 @@ void loopPrincipal(GLFWwindow* window, AppState& app) {
             case 4: mostrarEnviar(app);         break;
         }
 
-        // Render
+        //Render
         ImGui::Render();
         int w, h;
         glfwGetFramebufferSize(window, &w, &h);
@@ -97,9 +93,7 @@ void loopPrincipal(GLFWwindow* window, AppState& app) {
     }
 }
 
-// ════════════════════════════════════════════════════════════════
-//  CLEANUP
-// ════════════════════════════════════════════════════════════════
+//Limpiar la ventana
 void limpiar(GLFWwindow* window) {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
@@ -108,11 +102,9 @@ void limpiar(GLFWwindow* window) {
     glfwTerminate();
 }
 
-// ════════════════════════════════════════════════════════════════
-//  PANTALLA 0 — Menú principal (panel lateral)
-// ════════════════════════════════════════════════════════════════
+//Pantalla de menu principal
 void mostrarMenuPrincipal(AppState& app) {
-    // ── Panel lateral ─────────────────────────────────────────
+    //Configuración de panel pricipal
     ImGui::SetNextWindowPos({0, 0}, ImGuiCond_Always);
     ImGui::SetNextWindowSize({280, 1080}, ImGuiCond_Always);
     ImGui::PushStyleColor(ImGuiCol_WindowBg, {0.11f, 0.11f, 0.18f, 1.f});
@@ -161,7 +153,7 @@ void mostrarMenuPrincipal(AppState& app) {
 
     ImGui::End();
 
-    // ── Área de bienvenida (solo cuando pantalla == 0) ────────
+    //Pantalla pricnipal
     if (app.pantalla == 0) {
         ImGui::SetNextWindowPos({300, 50}, ImGuiCond_Always);
         ImGui::SetNextWindowSize({1580, 980}, ImGuiCond_Always);
@@ -182,9 +174,7 @@ void mostrarMenuPrincipal(AppState& app) {
     }
 }
 
-// ════════════════════════════════════════════════════════════════
-//  PANTALLA 1 — Registro de paquetes
-// ════════════════════════════════════════════════════════════════
+//Pantalla de registro de paquetes
 void mostrarRegistro(AppState& app) {
     ImGui::SetNextWindowPos({300, 50}, ImGuiCond_Always);
     ImGui::SetNextWindowSize({1580, 980}, ImGuiCond_Always);
@@ -243,7 +233,7 @@ void mostrarRegistro(AppState& app) {
         ImGui::EndCombo();
     }
 
-        // Actualizar destino con la estación seleccionada
+        //Actualizar destino con la estación seleccionada
         filaDst = app.estaciones[estacionSeleccionada].fila;
         colDst  = app.estaciones[estacionSeleccionada].columna;
     }
@@ -340,9 +330,7 @@ void mostrarRegistro(AppState& app) {
     ImGui::End();
 }
 
-// ════════════════════════════════════════════════════════════════
-//  PANTALLA 2 — Configuración
-// ════════════════════════════════════════════════════════════════
+//Pantalla de configuración
 void mostrarConfiguracion(AppState& app) {
     ImGui::SetNextWindowPos({300, 50}, ImGuiCond_Always);
     ImGui::SetNextWindowSize({1580, 980}, ImGuiCond_Always);
@@ -350,7 +338,7 @@ void mostrarConfiguracion(AppState& app) {
                  ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
                  ImGuiWindowFlags_NoCollapse);
 
-    // ── Cargar mapa ───────────────────────────────────────────
+    // Carga mapa
     ImGui::TextColored({0.5f, 0.8f, 1.f, 1.f}, "Mapa JSON");
     ImGui::Separator();
     ImGui::Spacing();
@@ -445,9 +433,7 @@ void mostrarConfiguracion(AppState& app) {
     ImGui::End();
 }
 
-// ════════════════════════════════════════════════════════════════
-//  PANTALLA 3 — Preview de ruta
-// ════════════════════════════════════════════════════════════════
+//Pantalla de preview de ruta
 void mostrarPreview(AppState& app) {
     ImGui::SetNextWindowPos({300, 50}, ImGuiCond_Always);
     ImGui::SetNextWindowSize({1580, 980}, ImGuiCond_Always);
@@ -467,7 +453,7 @@ void mostrarPreview(AppState& app) {
         return;
     }
 
-    // ── Botón calcular ruta ───────────────────────────────────
+    //Botón para calcular ruta
     if (app.entregas.empty()) {
         ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f},
                            "Registra paquetes primero.");
@@ -502,13 +488,13 @@ void mostrarPreview(AppState& app) {
                     }
                 }
 
-                // Eliminar los tomados de pendientes
+                //Eliminar los tomados de pendientes
                 for (const auto& g : grupo) {
                     pendientes.erase(std::remove_if(pendientes.begin(), pendientes.end(),
                         [&](const Entrega& e){ return e.id == g.id; }), pendientes.end());
                 }
 
-                // Calcular ruta para este grupo
+                //Calcular ruta para este grupo
                 ResultadoRuta ruta;
                 switch (app.algoSeleccionado) {
                     case 0: ruta = algoritmoProgramacionDinamica(app.tablero, app.inicio, grupo, 20.f); break;
@@ -523,10 +509,48 @@ void mostrarPreview(AppState& app) {
             }
 
             app.rutaCalculadaLista = true;
+            // Construir camino completo del viaje 0
+            app.caminoCompleto.clear();
+            if (app.rutaCalculada.rutaValida) {
+                Punto actual = app.inicio;
+                for (int seg = 0; seg < (int)app.rutaCalculada.ruta.size(); seg++) {
+                    auto camino = obtenerCaminoBFS(app.tablero, actual, app.rutaCalculada.ruta[seg].destino);
+                    for (int pi = 0; pi < (int)camino.size() - 1; pi++) {
+                    const auto& p = camino[pi];
+                        // Buscar si ya existe este punto
+                        bool encontrado = false;
+                        for (auto& par : app.caminoCompleto) {
+                            if (par.first.fila == p.fila && par.first.columna == p.columna) {
+                                par.second.push_back(seg + 1);
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                        if (!encontrado)
+                            app.caminoCompleto.push_back({p, {seg + 1}});
+                    }
+                    actual = app.rutaCalculada.ruta[seg].destino;
+                }
+                // Regreso al inicio
+                auto regreso = obtenerCaminoBFS(app.tablero, actual, app.inicio);
+                for (const auto& p : regreso) {
+                    bool encontrado = false;
+                    for (auto& par : app.caminoCompleto) {
+                        if (par.first.fila == p.fila && par.first.columna == p.columna) {
+                            par.second.push_back(0); // 0 = regreso
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                    if (!encontrado)
+                        app.caminoCompleto.push_back({p, {0}});
+                }
+            }
+    
             app.rutaCalculada = app.viajes.empty() ? ResultadoRuta{} : app.viajes[0];
         }
 
-        if (app.rutaCalculadaLista && app.viajes.size() > 1) {
+       if (app.rutaCalculadaLista && app.viajes.size() > 1) {
             ImGui::Spacing();
             ImGui::Text("Viaje %d de %d", app.viajeActual + 1, (int)app.viajes.size());
             ImGui::SameLine();
@@ -534,6 +558,42 @@ void mostrarPreview(AppState& app) {
                 if (app.viajeActual > 0) {
                     app.viajeActual--;
                     app.rutaCalculada = app.viajes[app.viajeActual];
+                    app.caminoCompleto.clear();
+                    if (app.rutaCalculada.rutaValida) {
+                        Punto actual = app.inicio;
+                        for (int seg = 0; seg < (int)app.rutaCalculada.ruta.size(); seg++) {
+                            auto camino = obtenerCaminoBFS(app.tablero, actual, app.rutaCalculada.ruta[seg].destino);
+                            for (int pi = 0; pi < (int)camino.size() - 1; pi++) {
+                            const auto& p = camino[pi];
+                                // Buscar si ya existe este punto
+                                bool encontrado = false;
+                                for (auto& par : app.caminoCompleto) {
+                                    if (par.first.fila == p.fila && par.first.columna == p.columna) {
+                                        par.second.push_back(seg + 1);
+                                        encontrado = true;
+                                        break;
+                                    }
+                                }
+                                if (!encontrado)
+                                    app.caminoCompleto.push_back({p, {seg + 1}});
+                            }
+                            actual = app.rutaCalculada.ruta[seg].destino;
+                        }
+                        // Regreso al inicio
+                        auto regreso = obtenerCaminoBFS(app.tablero, actual, app.inicio);
+                        for (const auto& p : regreso) {
+                            bool encontrado = false;
+                            for (auto& par : app.caminoCompleto) {
+                                if (par.first.fila == p.fila && par.first.columna == p.columna) {
+                                    par.second.push_back(0); // 0 = regreso
+                                    encontrado = true;
+                                    break;
+                                }
+                            }
+                            if (!encontrado)
+                                app.caminoCompleto.push_back({p, {0}});
+                        }
+                    }
                 }
             }
             ImGui::SameLine();
@@ -541,6 +601,42 @@ void mostrarPreview(AppState& app) {
                 if (app.viajeActual < (int)app.viajes.size() - 1) {
                     app.viajeActual++;
                     app.rutaCalculada = app.viajes[app.viajeActual];
+                    app.caminoCompleto.clear();
+                    if (app.rutaCalculada.rutaValida) {
+                        Punto actual = app.inicio;
+                        for (int seg = 0; seg < (int)app.rutaCalculada.ruta.size(); seg++) {
+                            auto camino = obtenerCaminoBFS(app.tablero, actual, app.rutaCalculada.ruta[seg].destino);
+                            for (int pi = 0; pi < (int)camino.size() - 1; pi++) {
+                            const auto& p = camino[pi];
+                                // Buscar si ya existe este punto
+                                bool encontrado = false;
+                                for (auto& par : app.caminoCompleto) {
+                                    if (par.first.fila == p.fila && par.first.columna == p.columna) {
+                                        par.second.push_back(seg + 1);
+                                        encontrado = true;
+                                        break;
+                                    }
+                                }
+                                if (!encontrado)
+                                    app.caminoCompleto.push_back({p, {seg + 1}});
+                            }
+                            actual = app.rutaCalculada.ruta[seg].destino;
+                        }
+                        // Regreso al inicio
+                        auto regreso = obtenerCaminoBFS(app.tablero, actual, app.inicio);
+                        for (const auto& p : regreso) {
+                            bool encontrado = false;
+                            for (auto& par : app.caminoCompleto) {
+                                if (par.first.fila == p.fila && par.first.columna == p.columna) {
+                                    par.second.push_back(0); // 0 = regreso
+                                    encontrado = true;
+                                    break;
+                                }
+                            }
+                            if (!encontrado)
+                                app.caminoCompleto.push_back({p, {0}});
+                        }
+                    }
                 }
             }
         }
@@ -554,7 +650,7 @@ void mostrarPreview(AppState& app) {
             app.rutaCalculada.costoTotal, costoTotal);
     }
 
-    // ── Grid del mapa ─────────────────────────────────────────
+    //Grid del mapa
     ImDrawList* draw = ImGui::GetWindowDrawList();
     ImVec2      base = ImGui::GetCursorScreenPos();
     const float celda = 40.f;
@@ -580,6 +676,7 @@ void mostrarPreview(AppState& app) {
             }
 
 
+            // Verificar si es destino de la ruta
             int enRutaIdx = -1;
             for (int k = 0; k < (int)destinosRuta.size(); k++) {
                 if (destinosRuta[k].fila == i && destinosRuta[k].columna == j) {
@@ -587,12 +684,34 @@ void mostrarPreview(AppState& app) {
                     break;
                 }
             }
+
+            // Verificar si es parte del camino recorrido
+            std::vector<int> segmentosCamino;
+            if (enRutaIdx < 0) {
+                for (const auto& par : app.caminoCompleto) {
+                    if (par.first.fila == i && par.first.columna == j) {
+                        segmentosCamino = par.second;
+                        break;
+                    }
+                }
+            }
+
             if (enRutaIdx >= 0) {
                 color = IM_COL32(50, 220, 100, 255);
                 draw->AddRectFilled(p0, p1, color, 3.f);
                 char buf[8];
                 snprintf(buf, sizeof(buf), "%d", enRutaIdx + 1);
                 draw->AddText({p0.x + 14, p0.y + 12}, IM_COL32(0,0,0,255), buf);
+            } else if (!segmentosCamino.empty()) {
+                draw->AddRectFilled(p0, p1, IM_COL32(100, 180, 255, 255), 3.f);
+                std::string label = "";
+                for (int s : segmentosCamino) {
+                    if (s == 0) continue;
+                    if (!label.empty()) label += "-";
+                    label += std::to_string(s);
+                }
+                if (!label.empty())
+                    draw->AddText({p0.x + 4, p0.y + 12}, IM_COL32(0,0,0,255), label.c_str());
             } else {
                 draw->AddRectFilled(p0, p1, color, 3.f);
             }
@@ -602,13 +721,13 @@ void mostrarPreview(AppState& app) {
     ImGui::Dummy({(float)app.tablero[0].size() * celda,
                   (float)app.tablero.size()    * celda});
 
-    // ── Leyenda ───────────────────────────────────────────────
+    //Significado de colores
     ImGui::Spacing();
     ImGui::Separator();
     ImGui::Spacing();
 
 
-    // Leyenda con cuadros de color
+    //Leyenda con cuadros de color
     ImDrawList* drawL = ImGui::GetWindowDrawList();
     ImVec2 pos = ImGui::GetCursorScreenPos();
     float sz = 16.f;
@@ -629,6 +748,11 @@ void mostrarPreview(AppState& app) {
     ImGui::Text("Estacion"); ImGui::SameLine(0, 20);
 
     pos = ImGui::GetCursorScreenPos();
+    drawL->AddRectFilled(pos, {pos.x+sz, pos.y+sz}, IM_COL32(100,180,255,255), 2.f);
+    ImGui::Dummy({sz, sz}); ImGui::SameLine(0, gap);
+    ImGui::Text("Recorrido"); ImGui::SameLine(0, 20);
+
+    pos = ImGui::GetCursorScreenPos();
     drawL->AddRectFilled(pos, {pos.x+sz, pos.y+sz}, IM_COL32(50,220,100,255), 2.f);
     ImGui::Dummy({sz, sz}); ImGui::SameLine(0, gap);
     ImGui::Text("En ruta");
@@ -640,9 +764,7 @@ void mostrarPreview(AppState& app) {
 }
 
 
-// ════════════════════════════════════════════════════════════════
-//  PANTALLA 4 — Enviar al robot
-// ════════════════════════════════════════════════════════════════
+//Pantalla de enviar ruta al robot
 void mostrarEnviar(AppState& app) {
     ImGui::SetNextWindowPos({300, 50}, ImGuiCond_Always);
     ImGui::SetNextWindowSize({1580, 980}, ImGuiCond_Always);

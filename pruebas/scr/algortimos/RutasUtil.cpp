@@ -1,6 +1,7 @@
 //rutasUtil
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <queue>
 #include <limits>
 
@@ -168,4 +169,55 @@ void imprimirResultadoRuta(const ResultadoRuta& resultado) {
     else if (resultado.tecnica == "Las Vegas") {
         cout << "Las Vegas genera rutas aleatorias hasta encontrar una ruta valida.\n";
     }
+}
+
+std::vector<Punto> obtenerCaminoBFS(
+    const vector<vector<int>>& tablero,
+    Punto origen,
+    Punto destino
+) {
+    if (tablero.empty()) return {};
+
+    int filas = tablero.size();
+    int columnas = tablero[0].size();
+
+    vector<vector<bool>> visitado(filas, vector<bool>(columnas, false));
+    vector<vector<Punto>> padre(filas, vector<Punto>(columnas, {-1, -1}));
+
+    queue<Punto> cola;
+    cola.push(origen);
+    visitado[origen.fila][origen.columna] = true;
+
+    int df[4] = {-1, 1, 0, 0};
+    int dc[4] = {0, 0, -1, 1};
+
+    while (!cola.empty()) {
+        Punto actual = cola.front();
+        cola.pop();
+
+        if (actual.fila == destino.fila && actual.columna == destino.columna) {
+            // Reconstruir camino
+            vector<Punto> camino;
+            Punto cur = destino;
+            while (!(cur.fila == origen.fila && cur.columna == origen.columna)) {
+                camino.push_back(cur);
+                cur = padre[cur.fila][cur.columna];
+            }
+            camino.push_back(origen);
+            reverse(camino.begin(), camino.end());
+            return camino;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            int nf = actual.fila + df[i];
+            int nc = actual.columna + dc[i];
+            if (nf >= 0 && nf < filas && nc >= 0 && nc < columnas &&
+                !visitado[nf][nc] && esTransitableRuta(tablero[nf][nc])) {
+                visitado[nf][nc] = true;
+                padre[nf][nc] = actual;
+                cola.push({nf, nc});
+            }
+        }
+    }
+    return {};
 }
