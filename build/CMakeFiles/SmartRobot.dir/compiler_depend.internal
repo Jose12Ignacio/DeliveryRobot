@@ -2643,8 +2643,10 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/pruebas/scr/algortimos/RutasUtil.cpp
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/Estructura.h
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/RutasUtil.h
+ C:/mingw64/include/c++/13.3.0/algorithm
  C:/mingw64/include/c++/13.3.0/backward/binders.h
  C:/mingw64/include/c++/13.3.0/bit
+ C:/mingw64/include/c++/13.3.0/bits/algorithmfwd.h
  C:/mingw64/include/c++/13.3.0/bits/alloc_traits.h
  C:/mingw64/include/c++/13.3.0/bits/allocator.h
  C:/mingw64/include/c++/13.3.0/bits/basic_ios.h
@@ -2686,6 +2688,7 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj
  C:/mingw64/include/c++/13.3.0/bits/refwrap.h
  C:/mingw64/include/c++/13.3.0/bits/requires_hosted.h
  C:/mingw64/include/c++/13.3.0/bits/std_abs.h
+ C:/mingw64/include/c++/13.3.0/bits/stl_algo.h
  C:/mingw64/include/c++/13.3.0/bits/stl_algobase.h
  C:/mingw64/include/c++/13.3.0/bits/stl_bvector.h
  C:/mingw64/include/c++/13.3.0/bits/stl_construct.h
@@ -2697,12 +2700,14 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj
  C:/mingw64/include/c++/13.3.0/bits/stl_iterator_base_types.h
  C:/mingw64/include/c++/13.3.0/bits/stl_pair.h
  C:/mingw64/include/c++/13.3.0/bits/stl_queue.h
+ C:/mingw64/include/c++/13.3.0/bits/stl_tempbuf.h
  C:/mingw64/include/c++/13.3.0/bits/stl_uninitialized.h
  C:/mingw64/include/c++/13.3.0/bits/stl_vector.h
  C:/mingw64/include/c++/13.3.0/bits/streambuf.tcc
  C:/mingw64/include/c++/13.3.0/bits/streambuf_iterator.h
  C:/mingw64/include/c++/13.3.0/bits/string_view.tcc
  C:/mingw64/include/c++/13.3.0/bits/stringfwd.h
+ C:/mingw64/include/c++/13.3.0/bits/uniform_int_dist.h
  C:/mingw64/include/c++/13.3.0/bits/uses_allocator.h
  C:/mingw64/include/c++/13.3.0/bits/uses_allocator_args.h
  C:/mingw64/include/c++/13.3.0/bits/utility.h
@@ -2732,6 +2737,8 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj
  C:/mingw64/include/c++/13.3.0/limits
  C:/mingw64/include/c++/13.3.0/new
  C:/mingw64/include/c++/13.3.0/ostream
+ C:/mingw64/include/c++/13.3.0/pstl/execution_defs.h
+ C:/mingw64/include/c++/13.3.0/pstl/glue_algorithm_defs.h
  C:/mingw64/include/c++/13.3.0/pstl/pstl_config.h
  C:/mingw64/include/c++/13.3.0/queue
  C:/mingw64/include/c++/13.3.0/stdexcept

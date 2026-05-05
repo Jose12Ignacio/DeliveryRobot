@@ -34,11 +34,11 @@ struct AppState {
     int maxDeliveries = 1;
     int algoSeleccionado = 0;
     
+    std::vector<std::pair<Punto, std::vector<int>>> caminoCompleto;
 
     // Resultado de ruta calculada
     ResultadoRuta rutaCalculada;
     bool rutaCalculadaLista = false;
-    
     std::vector<ResultadoRuta> viajes;
     int                        viajeActual = 0;
     // Pantalla activa

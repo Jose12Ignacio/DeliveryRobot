@@ -146,10 +146,17 @@ CMakeFiles/SmartRobot.dir/pruebas/scr/algortimos/RutasUtil.cpp.obj: \
  C:/mingw64/include/c++/13.3.0/bits/stl_vector.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_bvector.h \
  C:/mingw64/include/c++/13.3.0/bits/vector.tcc \
+ C:/mingw64/include/c++/13.3.0/algorithm \
+ C:/mingw64/include/c++/13.3.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/13.3.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/13.3.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/13.3.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/13.3.0/bits/stl_tempbuf.h \
+ C:/mingw64/include/c++/13.3.0/pstl/glue_algorithm_defs.h \
+ C:/mingw64/include/c++/13.3.0/pstl/execution_defs.h \
  C:/mingw64/include/c++/13.3.0/queue C:/mingw64/include/c++/13.3.0/deque \
  C:/mingw64/include/c++/13.3.0/bits/stl_deque.h \
  C:/mingw64/include/c++/13.3.0/bits/deque.tcc \
- C:/mingw64/include/c++/13.3.0/bits/stl_heap.h \
  C:/mingw64/include/c++/13.3.0/bits/stl_queue.h \
  C:/mingw64/include/c++/13.3.0/limits \
  C:/Users/fbarr/OneDrive/Documentos/GitHub/DeliveryRobot/Include/RutasUtil.h \
