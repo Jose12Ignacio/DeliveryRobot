@@ -1,4 +1,7 @@
-#include "Menu.h"
+//Menu.cpp
+#include <algorithm>
+#include "../Include/Menu.h"
+#include "../Include/RutasUtil.h"
 #include <iostream>
 #include <cstdio>
 
@@ -205,6 +208,7 @@ void mostrarRegistro(AppState& app) {
     ImGui::SetNextItemWidth(200);
     ImGui::InputInt("##peso", &peso);
     if (peso < 1) peso = 1;
+    if (peso > 20) peso = 20;
     ImGui::Spacing();
    ImGui::Text("Estacion destino:");
     ImGui::Spacing();
@@ -248,6 +252,7 @@ void mostrarRegistro(AppState& app) {
     ImGui::Spacing();
 
     if (ImGui::Button("Agregar paquete", {200, 45})) {
+        if (peso < 1) peso = 1;
         errorMsg[0] = '\0';
 
         if (peso < 1 || peso > 20) {
@@ -274,7 +279,7 @@ void mostrarRegistro(AppState& app) {
                 nueva.peso    = peso;
                 nueva.destino = {filaDst, colDst};
                 app.entregas.push_back(nueva);
-                peso    = 0;
+                peso    = 1;
                 filaDst = 0;
                 colDst  = 0;
             }
@@ -314,7 +319,7 @@ void mostrarRegistro(AppState& app) {
             const auto& e = app.entregas[i];
             ImGui::TableNextRow();
             ImGui::TableSetColumnIndex(0); ImGui::Text("%d", e.id);
-            ImGui::TableSetColumnIndex(1); ImGui::Text("%d kg", e.peso);
+            ImGui::TableSetColumnIndex(1); ImGui::Text("%.0f kg", e.peso);
             ImGui::TableSetColumnIndex(2);
             ImGui::Text("(%d, %d)", e.destino.fila, e.destino.columna);
             ImGui::TableSetColumnIndex(3);
@@ -363,6 +368,32 @@ void mostrarConfiguracion(AppState& app) {
         app.mapaListo = false;
         cargarMapaDesdeJSON(rutaJson, app.tablero, app.inicio, app.estaciones);
         app.mapaListo = (app.inicio.fila != -1);
+
+        std::cout << "[DEBUG] inicio real: " << app.inicio.fila << "," << app.inicio.columna << "\n";
+        std::cout << "[DEBUG] tablero[0][0]: " << app.tablero[0][0] << "\n";
+        std::cout << "[DEBUG] tablero[0][1]: " << app.tablero[0][1] << "\n";
+        std::cout << "[DEBUG] tablero[1][0]: " << app.tablero[1][0] << "\n";
+        std::cout << "[DEBUG] tablero[1][1]: " << app.tablero[1][1] << "\n";
+        std::cout << "[DEBUG] estaciones size: " << app.estaciones.size() << "\n";
+        // Probar BFS desde inicio a primera estacion
+        if (!app.estaciones.empty()) {
+            int dist = calcularDistanciaBFSRuta(app.tablero, app.inicio, app.estaciones[0]);
+            std::cout << "[DEBUG] BFS inicio->estacion[0]: " << dist << "\n";
+            std::cout << "[DEBUG] estacion[0]: " << app.estaciones[0].fila << "," << app.estaciones[0].columna << "\n";
+        
+        std::cout << "[DEBUG] fila 0: ";
+        for (int j = 0; j < (int)app.tablero[0].size(); j++)
+            std::cout << app.tablero[0][j] << " ";
+        std::cout << "\n";
+
+        std::cout << "[DEBUG] Estaciones alcanzables:\n";
+        for (int i = 0; i < (int)app.estaciones.size(); i++) {
+            int dist = calcularDistanciaBFSRuta(app.tablero, app.inicio, app.estaciones[i]);
+            std::cout << "  estacion[" << i << "] (" 
+                    << app.estaciones[i].fila << "," 
+                    << app.estaciones[i].columna << ") -> dist: " << dist << "\n";
+}
+}
     }
 
     ImGui::Spacing();
@@ -398,13 +429,13 @@ void mostrarConfiguracion(AppState& app) {
     ImGui::Separator();
     ImGui::Spacing();
 
-    ImGui::Checkbox("Programacion Dinamica",    &app.algoDP);
-    ImGui::Checkbox("Algoritmos Geneticos",     &app.algoGenetico);
-    ImGui::Checkbox("Greedy (Nearest Neighbor)",&app.algoGreedy);
-    ImGui::Checkbox("Backtracking",             &app.algoBacktrack);
-    ImGui::Checkbox("Divide y Venceras",        &app.algoDyV);
-    ImGui::Checkbox("Monte Carlo / Las Vegas",  &app.algoMonteCarlo);
-
+    if (ImGui::RadioButton("Programacion Dinamica",    app.algoSeleccionado == 0)) app.algoSeleccionado = 0;
+    if (ImGui::RadioButton("Algoritmos Geneticos",     app.algoSeleccionado == 1)) app.algoSeleccionado = 1;
+    if (ImGui::RadioButton("Greedy",app.algoSeleccionado == 2)) app.algoSeleccionado = 2;
+    if (ImGui::RadioButton("Backtracking",             app.algoSeleccionado == 3)) app.algoSeleccionado = 3;
+    if (ImGui::RadioButton("Divide y Venceras",        app.algoSeleccionado == 4)) app.algoSeleccionado = 4;
+    if (ImGui::RadioButton("Monte Carlo / Las Vegas",  app.algoSeleccionado == 5)) app.algoSeleccionado = 5;
+    
     ImGui::Spacing();
     ImGui::Separator();
     ImGui::Spacing();
@@ -436,10 +467,97 @@ void mostrarPreview(AppState& app) {
         return;
     }
 
+    // ── Botón calcular ruta ───────────────────────────────────
+    if (app.entregas.empty()) {
+        ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f},
+                           "Registra paquetes primero.");
+    } else {
+        const char* nombresAlgo[] = {
+            "Programacion Dinamica", "Algoritmo Genetico",
+            "Greedy", "Backtracking",
+            "Divide y Venceras", "Monte Carlo / Las Vegas"
+        };
+        ImGui::Text("Algoritmo: %s", nombresAlgo[app.algoSeleccionado]);
+        ImGui::SameLine();
+
+        if (ImGui::Button("Calcular Ruta", {150, 30})) {
+            app.viajes.clear();
+            app.rutaCalculadaLista = false;
+            app.viajeActual = 0;
+
+            // Dividir entregas en grupos de maxDeliveries
+            std::vector<Entrega> pendientes = app.entregas;
+    
+            while (!pendientes.empty()) {
+                // Tomar hasta maxDeliveries paquetes para este viaje
+                std::vector<Entrega> grupo;
+                int tomados = 0;
+                float pesoGrupo = 0.f;
+
+                for (int i = 0; i < (int)pendientes.size() && tomados < app.maxDeliveries; i++) {
+                    if (pesoGrupo + pendientes[i].peso <= 20.f) {
+                        grupo.push_back(pendientes[i]);
+                        pesoGrupo += pendientes[i].peso;
+                        tomados++;
+                    }
+                }
+
+                // Eliminar los tomados de pendientes
+                for (const auto& g : grupo) {
+                    pendientes.erase(std::remove_if(pendientes.begin(), pendientes.end(),
+                        [&](const Entrega& e){ return e.id == g.id; }), pendientes.end());
+                }
+
+                // Calcular ruta para este grupo
+                ResultadoRuta ruta;
+                switch (app.algoSeleccionado) {
+                    case 0: ruta = algoritmoProgramacionDinamica(app.tablero, app.inicio, grupo, 20.f); break;
+                    case 1: ruta = algoritmoGenetico(app.tablero, app.inicio, grupo, 20.f, 50, 100); break;
+                    case 2: ruta = algoritmoGreedy(app.tablero, app.inicio, grupo, 20.f); break;
+                    case 3: ruta = algoritmoBacktracking(app.tablero, app.inicio, grupo, 20.f); break;
+                    case 4: ruta = algoritmoGreedy(app.tablero, app.inicio, grupo, 20.f);
+                            ruta.tecnica = "Divide y Venceras (ruta via Greedy)"; break;
+                    case 5: ruta = algoritmoMonteCarlo(app.tablero, app.inicio, grupo, 1000, 20.f); break;
+                }
+                app.viajes.push_back(ruta);
+            }
+
+            app.rutaCalculadaLista = true;
+            app.rutaCalculada = app.viajes.empty() ? ResultadoRuta{} : app.viajes[0];
+        }
+
+        if (app.rutaCalculadaLista && app.viajes.size() > 1) {
+            ImGui::Spacing();
+            ImGui::Text("Viaje %d de %d", app.viajeActual + 1, (int)app.viajes.size());
+            ImGui::SameLine();
+            if (ImGui::Button("< Anterior", {100, 25})) {
+                if (app.viajeActual > 0) {
+                    app.viajeActual--;
+                    app.rutaCalculada = app.viajes[app.viajeActual];
+                }
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Siguiente >", {100, 25})) {
+                if (app.viajeActual < (int)app.viajes.size() - 1) {
+                    app.viajeActual++;
+                    app.rutaCalculada = app.viajes[app.viajeActual];
+                }
+            }
+        }
+    }
+    ImGui::Spacing();
+
     // ── Grid del mapa ─────────────────────────────────────────
     ImDrawList* draw = ImGui::GetWindowDrawList();
     ImVec2      base = ImGui::GetCursorScreenPos();
     const float celda = 40.f;
+
+    // Construir set de destinos en la ruta para pintarlos
+    std::vector<Punto> destinosRuta;
+    if (app.rutaCalculadaLista && app.rutaCalculada.rutaValida) {
+        for (const auto& e : app.rutaCalculada.ruta)
+            destinosRuta.push_back(e.destino);
+    }
 
     for (int i = 0; i < (int)app.tablero.size(); i++) {
         for (int j = 0; j < (int)app.tablero[i].size(); j++) {
@@ -448,12 +566,29 @@ void mostrarPreview(AppState& app) {
 
             ImU32 color;
             switch (app.tablero[i][j]) {
-                case 1:  color = IM_COL32( 50, 100, 200, 255); break; // camino
-                case 2:  color = IM_COL32(230, 200,  30, 255); break; // inicio
-                case 3:  color = IM_COL32(200,  50,  50, 255); break; // estación
-                default: color = IM_COL32( 30,  30,  40, 255); break; // vacío
+                case 1:  color = IM_COL32( 50, 100, 200, 255); break;
+                case 2:  color = IM_COL32(230, 200,  30, 255); break;
+                case 3:  color = IM_COL32(200,  50,  50, 255); break;
+                default: color = IM_COL32( 30,  30,  40, 255); break;
             }
-            draw->AddRectFilled(p0, p1, color, 3.f);
+
+
+            int enRutaIdx = -1;
+            for (int k = 0; k < (int)destinosRuta.size(); k++) {
+                if (destinosRuta[k].fila == i && destinosRuta[k].columna == j) {
+                    enRutaIdx = k;
+                    break;
+                }
+            }
+            if (enRutaIdx >= 0) {
+                color = IM_COL32(50, 220, 100, 255);
+                draw->AddRectFilled(p0, p1, color, 3.f);
+                char buf[8];
+                snprintf(buf, sizeof(buf), "%d", enRutaIdx + 1);
+                draw->AddText({p0.x + 14, p0.y + 12}, IM_COL32(0,0,0,255), buf);
+            } else {
+                draw->AddRectFilled(p0, p1, color, 3.f);
+            }
         }
     }
 
@@ -471,13 +606,17 @@ void mostrarPreview(AppState& app) {
     ImGui::Text("Camino");                              ImGui::SameLine();
     ImGui::Dummy({10, 0});                              ImGui::SameLine();
     ImGui::TextColored({0.8f, 0.2f, 0.2f, 1.f}, "■"); ImGui::SameLine();
-    ImGui::Text("Estacion");
+    ImGui::Text("Estacion");                            ImGui::SameLine();
+    ImGui::Dummy({10, 0});                              ImGui::SameLine();
+    ImGui::TextColored({0.2f, 0.9f, 0.4f, 1.f}, "■"); ImGui::SameLine();
+    ImGui::Text("En ruta");
 
     ImGui::Spacing();
     if (ImGui::Button("< Volver", {120, 40})) app.pantalla = 0;
 
     ImGui::End();
 }
+
 
 // ════════════════════════════════════════════════════════════════
 //  PANTALLA 4 — Enviar al robot

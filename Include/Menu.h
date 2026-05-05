@@ -1,3 +1,4 @@
+//Menu.h
 #pragma once
 
 #include "imgui.h"
@@ -7,6 +8,13 @@
 #include <vector>
 #include <string>
 #include "../Include/Estructura.h" 
+#include "../Include/RutasUtil.h"
+#include "../Include/Backtracking.h"
+#include "../Include/Genetico.h"
+#include "../Include/Greedy.h"
+#include "../Include/Probabilisticos.h"
+#include "../Include/ProgramacionDinamica.h"
+
 
 // ─────────────────────────────────────────────
 //  Estado global de la aplicación
@@ -23,17 +31,20 @@ struct AppState {
     int                           nextId        = 1;
 
     // Configuración
-    int                           maxDeliveries = 1;
-    bool                          algoDP        = false;
-    bool                          algoGenetico  = false;
-    bool                          algoGreedy    = false;
-    bool                          algoBacktrack = false;
-    bool                          algoDyV       = false;
-    bool                          algoMonteCarlo= false;
+    int maxDeliveries = 1;
+    int algoSeleccionado = 0;
+    
 
+    // Resultado de ruta calculada
+    ResultadoRuta rutaCalculada;
+    bool rutaCalculadaLista = false;
+    
+    std::vector<ResultadoRuta> viajes;
+    int                        viajeActual = 0;
     // Pantalla activa
     // 0=Principal 1=Registro 2=Config 3=Preview 4=Enviar
     int pantalla = 0;
+
 };
 
 // ─────────────────────────────────────────────
