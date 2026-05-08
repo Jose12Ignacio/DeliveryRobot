@@ -351,7 +351,7 @@ void mostrarConfiguracion(AppState& app) {
     ImGui::SameLine();
 
     if (ImGui::Button("Cargar mapa", {140, 30})) {
-        app.tablero.clear();
+        app.tablero.assign(20, std::vector<int>(10, 0));
         app.estaciones.clear();
         app.inicio             = {-1, -1};
         app.mapaListo          = false;

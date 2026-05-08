@@ -1,5 +1,5 @@
 [
-  {"fila":1,"columna":1,"valor":"Inicio"}
+  {"fila":1,"columna":1,"valor":"Camino"}
 ,
   {"fila":1,"columna":2,"valor":"Camino"}
 ,
@@ -9,9 +9,13 @@
 ,
   {"fila":1,"columna":8,"valor":"Estacion"}
 ,
+  {"fila":2,"columna":1,"valor":"Estacion"}
+,
   {"fila":2,"columna":2,"valor":"Camino"}
 ,
   {"fila":2,"columna":3,"valor":"Camino"}
+,
+  {"fila":2,"columna":6,"valor":"Camino"}
 ,
   {"fila":2,"columna":8,"valor":"Camino"}
 ,
@@ -105,7 +109,9 @@
 ,
   {"fila":9,"columna":3,"valor":"Camino"}
 ,
-  {"fila":9,"columna":4,"valor":"Estacion"}
+  {"fila":9,"columna":4,"valor":"Camino"}
+,
+  {"fila":9,"columna":5,"valor":"Camino"}
 ,
   {"fila":9,"columna":6,"valor":"Camino"}
 ,
@@ -129,7 +135,7 @@
 ,
   {"fila":11,"columna":4,"valor":"Camino"}
 ,
-  {"fila":11,"columna":6,"valor":"Camino"}
+  {"fila":11,"columna":6,"valor":"Inicio"}
 ,
   {"fila":11,"columna":8,"valor":"Camino"}
 ,
@@ -153,9 +159,11 @@
 ,
   {"fila":13,"columna":6,"valor":"Camino"}
 ,
-  {"fila":13,"columna":7,"valor":"Estacion"}
+  {"fila":13,"columna":7,"valor":"Camino"}
 ,
   {"fila":13,"columna":9,"valor":"Camino"}
+,
+  {"fila":13,"columna":10,"valor":"Estacion"}
 ,
   {"fila":14,"columna":1,"valor":"Camino"}
 ,
@@ -205,6 +213,8 @@
 ,
   {"fila":18,"columna":1,"valor":"Camino"}
 ,
+  {"fila":18,"columna":2,"valor":"Estacion"}
+,
   {"fila":18,"columna":5,"valor":"Camino"}
 ,
   {"fila":18,"columna":7,"valor":"Camino"}
@@ -231,9 +241,11 @@
 ,
   {"fila":20,"columna":5,"valor":"Camino"}
 ,
+  {"fila":20,"columna":7,"valor":"Estacion"}
+,
   {"fila":20,"columna":8,"valor":"Camino"}
 ,
   {"fila":20,"columna":9,"valor":"Camino"}
 ,
-  {"fila":20,"columna":10,"valor":"Estacion"}
+  {"fila":20,"columna":10,"valor":"Camino"}
 ]
