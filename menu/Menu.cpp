@@ -1,5 +1,6 @@
 //Menu.cpp
 #include <algorithm>
+#include <windows.h>
 #include "../Include/Menu.h"
 #include "../Include/RutasUtil.h"
 #include <iostream>
@@ -772,28 +773,188 @@ void mostrarEnviar(AppState& app) {
                  ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
                  ImGuiWindowFlags_NoCollapse);
 
-    ImGui::TextColored({0.5f, 0.8f, 1.f, 1.f}, "Instrucciones para el robot");
+    ImGui::TextColored({0.5f, 0.8f, 1.f, 1.f}, "Enviar instrucciones al robot");
     ImGui::Separator();
     ImGui::Spacing();
 
-    if (app.entregas.empty()) {
-        ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f},
-                           "No hay paquetes registrados.");
-    } else {
-        ImGui::Text("Paquetes a entregar: %zu", app.entregas.size());
-        ImGui::Text("Max entregas por viaje: %d", app.maxDeliveries);
-        ImGui::Spacing();
-        ImGui::TextDisabled(
-            "(Las instrucciones se generaran cuando los algoritmos esten integrados)");
-        ImGui::Spacing();
+    // ── Variables estáticas ───────────────────────────────────
+    static char puertoCOM[16] = "COM8";
+    static HANDLE hSerial = INVALID_HANDLE_VALUE;
+    static bool conectado = false;
+    static char mensajeConexion[128] = "";
+    static HANDLE hHiloKeepAlive = INVALID_HANDLE_VALUE;
 
+    // ── Conexión Bluetooth ────────────────────────────────────
+    ImGui::Text("Puerto COM:");
+    ImGui::SameLine();
+    ImGui::SetNextItemWidth(100);
+    ImGui::InputText("##com", puertoCOM, sizeof(puertoCOM));
+    ImGui::SameLine();
+
+    if (!conectado) {
+        if (ImGui::Button("Conectar", {100, 30})) {
+            std::string puerto = "\\\\.\\" + std::string(puertoCOM);
+            hSerial = CreateFileA(puerto.c_str(),
+                GENERIC_READ | GENERIC_WRITE, 0, nullptr,
+                OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+
+            if (hSerial == INVALID_HANDLE_VALUE) {
+                snprintf(mensajeConexion, sizeof(mensajeConexion),
+                    "Error: no se pudo abrir %s (cod: %lu)", puertoCOM, GetLastError());
+                conectado = false;
+            } else {
+                DCB dcb = {0};
+                dcb.DCBlength = sizeof(dcb);
+                GetCommState(hSerial, &dcb);
+                dcb.BaudRate = CBR_9600;
+                dcb.ByteSize = 8;
+                dcb.StopBits = ONESTOPBIT;
+                dcb.Parity   = NOPARITY;
+                SetCommState(hSerial, &dcb);
+
+                COMMTIMEOUTS timeouts = {0};
+                timeouts.ReadIntervalTimeout        = 10;
+                timeouts.ReadTotalTimeoutConstant   = 10;
+                timeouts.ReadTotalTimeoutMultiplier = 1;
+                timeouts.WriteTotalTimeoutConstant  = 50;
+                timeouts.WriteTotalTimeoutMultiplier= 10;
+                SetCommTimeouts(hSerial, &timeouts);
+
+                // Hilo keep-alive: lee cada 300ms para mantener el Bluetooth vivo
+                hHiloKeepAlive = CreateThread(nullptr, 0,
+                    [](LPVOID param) -> DWORD {
+                        HANDLE h = (HANDLE)param;
+                        char buf[1];
+                        DWORD leido;
+                        while (true) {
+                            if (!ReadFile(h, buf, 1, &leido, nullptr)) {
+                                if (GetLastError() == ERROR_INVALID_HANDLE) break;
+                            }
+                            Sleep(300);
+                        }
+                        return 0;
+                    }, hSerial, 0, nullptr);
+
+                snprintf(mensajeConexion, sizeof(mensajeConexion),
+                    "Conectado a %s", puertoCOM);
+                conectado = true;
+            }
+        }
+    } else {
+        ImGui::PushStyleColor(ImGuiCol_Button, {0.6f, 0.1f, 0.1f, 1.f});
+        if (ImGui::Button("Desconectar", {110, 30})) {
+            // Cerrar handle hace que el hilo salga solo por ERROR_INVALID_HANDLE
+            CloseHandle(hSerial);
+            hSerial = INVALID_HANDLE_VALUE;
+            if (hHiloKeepAlive != INVALID_HANDLE_VALUE) {
+                WaitForSingleObject(hHiloKeepAlive, 1000);
+                CloseHandle(hHiloKeepAlive);
+                hHiloKeepAlive = INVALID_HANDLE_VALUE;
+            }
+            conectado = false;
+            snprintf(mensajeConexion, sizeof(mensajeConexion), "Desconectado.");
+        }
+        ImGui::PopStyleColor();
+    }
+
+    if (mensajeConexion[0] != '\0') {
+        ImGui::SameLine();
+        if (conectado)
+            ImGui::TextColored({0.4f, 1.f, 0.4f, 1.f}, "%s", mensajeConexion);
+        else
+            ImGui::TextColored({1.f, 0.4f, 0.4f, 1.f}, "%s", mensajeConexion);
+    }
+
+    ImGui::Spacing();
+    ImGui::Separator();
+    ImGui::Spacing();
+
+    // ── Estado ────────────────────────────────────────────────
+    if (!app.rutaCalculadaLista) {
+        ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f},
+            "Calcula la ruta primero en Preview.");
+        if (ImGui::Button("< Volver", {120, 40})) app.pantalla = 0;
+        ImGui::End();
+        return;
+    }
+
+    ImGui::Text("Viajes calculados: %d", (int)app.viajes.size());
+    ImGui::Text("Viaje actual: %d", app.viajeActual + 1);
+    ImGui::Spacing();
+
+    // ── Generar comandos ──────────────────────────────────────
+    auto generarComandos = [&]() -> std::vector<char> {
+        std::vector<char> cmds;
+        if (app.caminoCompleto.empty()) return cmds;
+
+        int orientacion = 0; // 0=Este 1=Sur 2=Oeste 3=Norte
+
+        std::vector<Punto> recorrido;
+        recorrido.push_back(app.inicio);
+        for (const auto& e : app.rutaCalculada.ruta)
+            recorrido.push_back(e.destino);
+        recorrido.push_back(app.inicio);
+
+        for (int paso = 0; paso + 1 < (int)recorrido.size(); paso++) {
+            auto segmento = obtenerCaminoBFS(app.tablero,
+                recorrido[paso], recorrido[paso + 1]);
+
+            for (int k = 0; k + 1 < (int)segmento.size(); k++) {
+                int df = segmento[k+1].fila    - segmento[k].fila;
+                int dc = segmento[k+1].columna - segmento[k].columna;
+
+                int dirDeseada = 0;
+                if      (dc ==  1) dirDeseada = 0;
+                else if (df ==  1) dirDeseada = 1;
+                else if (dc == -1) dirDeseada = 2;
+                else if (df == -1) dirDeseada = 3;
+
+                int diff = (dirDeseada - orientacion + 4) % 4;
+                if (diff == 1)      cmds.push_back('R');
+                else if (diff == 2) { cmds.push_back('R'); cmds.push_back('R'); }
+                else if (diff == 3) cmds.push_back('L');
+
+                orientacion = dirDeseada;
+                cmds.push_back('F');
+            }
+
+            if (paso < (int)recorrido.size() - 2)
+                cmds.push_back('D');
+        }
+        return cmds;
+    };
+
+    auto comandos = generarComandos();
+
+    // ── Preview de comandos ───────────────────────────────────
+    ImGui::TextColored({0.5f, 0.8f, 1.f, 1.f}, "Comandos a enviar:");
+    ImGui::Spacing();
+    std::string preview = "";
+    for (char c : comandos) preview += c;
+    preview += "  (total: " + std::to_string(comandos.size()) + ")";
+    ImGui::TextWrapped("%s", preview.c_str());
+
+    ImGui::Spacing();
+    ImGui::Separator();
+    ImGui::Spacing();
+
+    // ── Botón enviar ──────────────────────────────────────────
+    if (!conectado) {
+        ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f}, "Conecta el Bluetooth primero.");
+    } else {
         ImGui::PushStyleColor(ImGuiCol_Button,        {0.2f, 0.6f, 0.2f, 1.f});
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, {0.3f, 0.8f, 0.3f, 1.f});
         ImGui::PushStyleColor(ImGuiCol_ButtonActive,  {0.1f, 0.4f, 0.1f, 1.f});
 
         if (ImGui::Button("ENVIAR AL ROBOT", {250, 60})) {
-            // TODO: conectar con comunicación serial
-            std::cout << "[Robot] Enviando instrucciones...\n";
+            for (char cmd : comandos) {
+                std::string s(1, cmd);
+                s += "\n";
+                DWORD written;
+                WriteFile(hSerial, s.c_str(), s.size(), &written, nullptr);
+                Sleep(1000);
+            }
+            std::cout << "[Robot] Comandos enviados: " << comandos.size() << "\n";
         }
 
         ImGui::PopStyleColor(3);
