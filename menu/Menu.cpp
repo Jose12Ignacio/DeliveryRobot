@@ -777,12 +777,14 @@ void mostrarEnviar(AppState& app) {
     ImGui::Separator();
     ImGui::Spacing();
 
-    // ── Conexión Bluetooth ────────────────────────────────────
+    // ── Variables estáticas ───────────────────────────────────
     static char puertoCOM[16] = "COM8";
     static HANDLE hSerial = INVALID_HANDLE_VALUE;
     static bool conectado = false;
     static char mensajeConexion[128] = "";
+    static HANDLE hHiloKeepAlive = INVALID_HANDLE_VALUE;
 
+    // ── Conexión Bluetooth ────────────────────────────────────
     ImGui::Text("Puerto COM:");
     ImGui::SameLine();
     ImGui::SetNextItemWidth(100);
@@ -793,12 +795,12 @@ void mostrarEnviar(AppState& app) {
         if (ImGui::Button("Conectar", {100, 30})) {
             std::string puerto = "\\\\.\\" + std::string(puertoCOM);
             hSerial = CreateFileA(puerto.c_str(),
-                GENERIC_WRITE, 0, nullptr,
+                GENERIC_READ | GENERIC_WRITE, 0, nullptr,
                 OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
 
             if (hSerial == INVALID_HANDLE_VALUE) {
                 snprintf(mensajeConexion, sizeof(mensajeConexion),
-                    "Error: no se pudo abrir %s", puertoCOM);
+                    "Error: no se pudo abrir %s (cod: %lu)", puertoCOM, GetLastError());
                 conectado = false;
             } else {
                 DCB dcb = {0};
@@ -809,6 +811,30 @@ void mostrarEnviar(AppState& app) {
                 dcb.StopBits = ONESTOPBIT;
                 dcb.Parity   = NOPARITY;
                 SetCommState(hSerial, &dcb);
+
+                COMMTIMEOUTS timeouts = {0};
+                timeouts.ReadIntervalTimeout        = 10;
+                timeouts.ReadTotalTimeoutConstant   = 10;
+                timeouts.ReadTotalTimeoutMultiplier = 1;
+                timeouts.WriteTotalTimeoutConstant  = 50;
+                timeouts.WriteTotalTimeoutMultiplier= 10;
+                SetCommTimeouts(hSerial, &timeouts);
+
+                // Hilo keep-alive: lee cada 300ms para mantener el Bluetooth vivo
+                hHiloKeepAlive = CreateThread(nullptr, 0,
+                    [](LPVOID param) -> DWORD {
+                        HANDLE h = (HANDLE)param;
+                        char buf[1];
+                        DWORD leido;
+                        while (true) {
+                            if (!ReadFile(h, buf, 1, &leido, nullptr)) {
+                                if (GetLastError() == ERROR_INVALID_HANDLE) break;
+                            }
+                            Sleep(300);
+                        }
+                        return 0;
+                    }, hSerial, 0, nullptr);
+
                 snprintf(mensajeConexion, sizeof(mensajeConexion),
                     "Conectado a %s", puertoCOM);
                 conectado = true;
@@ -817,8 +843,14 @@ void mostrarEnviar(AppState& app) {
     } else {
         ImGui::PushStyleColor(ImGuiCol_Button, {0.6f, 0.1f, 0.1f, 1.f});
         if (ImGui::Button("Desconectar", {110, 30})) {
+            // Cerrar handle hace que el hilo salga solo por ERROR_INVALID_HANDLE
             CloseHandle(hSerial);
             hSerial = INVALID_HANDLE_VALUE;
+            if (hHiloKeepAlive != INVALID_HANDLE_VALUE) {
+                WaitForSingleObject(hHiloKeepAlive, 1000);
+                CloseHandle(hHiloKeepAlive);
+                hHiloKeepAlive = INVALID_HANDLE_VALUE;
+            }
             conectado = false;
             snprintf(mensajeConexion, sizeof(mensajeConexion), "Desconectado.");
         }
@@ -840,7 +872,7 @@ void mostrarEnviar(AppState& app) {
     // ── Estado ────────────────────────────────────────────────
     if (!app.rutaCalculadaLista) {
         ImGui::TextColored({1.f, 0.6f, 0.2f, 1.f},
-            "Calculá la ruta primero en Preview.");
+            "Calcula la ruta primero en Preview.");
         if (ImGui::Button("< Volver", {120, 40})) app.pantalla = 0;
         ImGui::End();
         return;
@@ -851,24 +883,19 @@ void mostrarEnviar(AppState& app) {
     ImGui::Spacing();
 
     // ── Generar comandos ──────────────────────────────────────
-    // Convertir caminoCompleto a F/L/R/D
-    // Orientacion: 0=Este(der) 1=Sur(abajo) 2=Oeste(izq) 3=Norte(arriba)
     auto generarComandos = [&]() -> std::vector<char> {
         std::vector<char> cmds;
         if (app.caminoCompleto.empty()) return cmds;
 
-        int orientacion = 0; // empieza mirando al Este
+        int orientacion = 0; // 0=Este 1=Sur 2=Oeste 3=Norte
 
-        // Reconstruir lista de puntos en orden
-        // caminoCompleto no está ordenado, así que usamos rutaCalculada
         std::vector<Punto> recorrido;
         recorrido.push_back(app.inicio);
         for (const auto& e : app.rutaCalculada.ruta)
             recorrido.push_back(e.destino);
-        recorrido.push_back(app.inicio); // regreso
+        recorrido.push_back(app.inicio);
 
         for (int paso = 0; paso + 1 < (int)recorrido.size(); paso++) {
-            // Obtener camino BFS entre dos puntos consecutivos
             auto segmento = obtenerCaminoBFS(app.tablero,
                 recorrido[paso], recorrido[paso + 1]);
 
@@ -876,14 +903,12 @@ void mostrarEnviar(AppState& app) {
                 int df = segmento[k+1].fila    - segmento[k].fila;
                 int dc = segmento[k+1].columna - segmento[k].columna;
 
-                // Dirección deseada
                 int dirDeseada = 0;
-                if      (dc ==  1) dirDeseada = 0; // Este
-                else if (df ==  1) dirDeseada = 1; // Sur
-                else if (dc == -1) dirDeseada = 2; // Oeste
-                else if (df == -1) dirDeseada = 3; // Norte
+                if      (dc ==  1) dirDeseada = 0;
+                else if (df ==  1) dirDeseada = 1;
+                else if (dc == -1) dirDeseada = 2;
+                else if (df == -1) dirDeseada = 3;
 
-                // Calcular giros necesarios
                 int diff = (dirDeseada - orientacion + 4) % 4;
                 if (diff == 1)      cmds.push_back('R');
                 else if (diff == 2) { cmds.push_back('R'); cmds.push_back('R'); }
@@ -893,7 +918,6 @@ void mostrarEnviar(AppState& app) {
                 cmds.push_back('F');
             }
 
-            // Si es un destino intermedio (no el regreso final), hacer entrega
             if (paso < (int)recorrido.size() - 2)
                 cmds.push_back('D');
         }
@@ -902,12 +926,12 @@ void mostrarEnviar(AppState& app) {
 
     auto comandos = generarComandos();
 
-    // Mostrar preview de comandos
+    // ── Preview de comandos ───────────────────────────────────
     ImGui::TextColored({0.5f, 0.8f, 1.f, 1.f}, "Comandos a enviar:");
     ImGui::Spacing();
     std::string preview = "";
     for (char c : comandos) preview += c;
-    preview += " (total: " + std::to_string(comandos.size()) + ")";
+    preview += "  (total: " + std::to_string(comandos.size()) + ")";
     ImGui::TextWrapped("%s", preview.c_str());
 
     ImGui::Spacing();
@@ -928,7 +952,7 @@ void mostrarEnviar(AppState& app) {
                 s += "\n";
                 DWORD written;
                 WriteFile(hSerial, s.c_str(), s.size(), &written, nullptr);
-                Sleep(1000); // esperar que el Arduino ejecute el comando
+                Sleep(1000);
             }
             std::cout << "[Robot] Comandos enviados: " << comandos.size() << "\n";
         }
