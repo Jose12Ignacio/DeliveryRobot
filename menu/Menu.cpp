@@ -553,6 +553,37 @@ void mostrarPreview(AppState& app) {
             }
     
             app.rutaCalculada = app.viajes.empty() ? ResultadoRuta{} : app.viajes[0];
+            
+            std::cout << "Comandos: ";
+            int orientacion = 0;
+            std::vector<Punto> recorrido;
+            recorrido.push_back(app.inicio);
+            for (const auto& e : app.rutaCalculada.ruta)
+                recorrido.push_back(e.destino);
+            recorrido.push_back(app.inicio);
+                    
+            for (int paso = 0; paso + 1 < (int)recorrido.size(); paso++) {
+                auto segmento = obtenerCaminoBFS(app.tablero, recorrido[paso], recorrido[paso + 1]);
+                for (int k = 0; k + 1 < (int)segmento.size(); k++) {
+                    int df = segmento[k+1].fila    - segmento[k].fila;
+                    int dc = segmento[k+1].columna - segmento[k].columna;
+                    int dirDeseada = 0;
+                    if      (dc ==  1) dirDeseada = 0;
+                    else if (df ==  1) dirDeseada = 1;
+                    else if (dc == -1) dirDeseada = 2;
+                    else if (df == -1) dirDeseada = 3;
+                    int diff = (dirDeseada - orientacion + 4) % 4;
+                    if (diff == 1)      std::cout << 'R';
+                    else if (diff == 2) std::cout << "RR";
+                    else if (diff == 3) std::cout << 'L';
+                    orientacion = dirDeseada;
+                    std::cout << 'F';
+                }
+                if (paso < (int)recorrido.size() - 2)
+                    std::cout << 'D';
+            }
+            std::cout << "\n";
+            
         }
 
        if (app.rutaCalculadaLista && app.viajes.size() > 1) {
@@ -958,7 +989,9 @@ void mostrarEnviar(AppState& app) {
                 WriteFile(hSerial, s.c_str(), s.size(), &written, nullptr);
                 Sleep(1000);
             }
-            std::cout << "[Robot] Comandos enviados: " << comandos.size() << "\n";
+            std::cout << "Comandos: ";
+            for (char c : comandos) std::cout << c;
+            std::cout << "\n";
         }
 
         ImGui::PopStyleColor(3);
