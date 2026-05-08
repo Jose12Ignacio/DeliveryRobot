@@ -351,10 +351,14 @@ void mostrarConfiguracion(AppState& app) {
     ImGui::SameLine();
 
     if (ImGui::Button("Cargar mapa", {140, 30})) {
-        app.tablero.assign(20, std::vector<int>(10, 0));
+        app.tablero.clear();
         app.estaciones.clear();
-        app.inicio    = {-1, -1};
-        app.mapaListo = false;
+        app.inicio             = {-1, -1};
+        app.mapaListo          = false;
+        app.rutaCalculadaLista = false;
+        app.viajes.clear();
+        app.caminoCompleto.clear();
+        app.viajeActual        = 0;
         cargarMapaDesdeJSON(rutaJson, app.tablero, app.inicio, app.estaciones);
         app.mapaListo = (app.inicio.fila != -1);
 
